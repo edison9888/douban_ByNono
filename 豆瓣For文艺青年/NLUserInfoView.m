@@ -25,6 +25,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+//        NSLog(@"提交测试");
         self.backgroundColor = [UIColor clearColor];
         UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 50, 50)];
         self.image = imv;
