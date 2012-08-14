@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
-#import "NLMiniBlogData.h"
+@class NLFriendsShuoShuoData;
+@class NLMiniBlogData;
 typedef enum _RSSTAG :NSUInteger {
     RSS_LATEST = 0,
     RSS_BOOK ,
@@ -40,8 +41,11 @@ typedef enum _RSSTAG :NSUInteger {
 //~~~~
 -(void)AuthorizationWithUser:(id)data delegate:(NSObject <NLDoubanRequestDelegate>*)delegate;
 
+//获取授权用户自己的广播
+-(void)getAuthorizationMiniBlogWithData: (NLFriendsShuoShuoData*)data  delegate:(NSObject <NLDoubanRequestDelegate>*)delegate;
+
 //获取授权用户关注的广播
--(void)getAuthorizationmFriendsMiniBlogWithdelegate:(NSObject <NLDoubanRequestDelegate>*)delegate;
+-(void)getAuthorizationmFriendsMiniBlogWithData: (NLFriendsShuoShuoData*)data  delegate:(NSObject <NLDoubanRequestDelegate>*)delegate;
 
 -(void)ReViewDetailById:(NSString*)reviewId delegate:(NSObject <NLDoubanRequestDelegate>*)delegate;
 @end

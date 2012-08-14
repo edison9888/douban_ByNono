@@ -9,11 +9,12 @@
 #import "NLRssInfo.h"
 
 @implementation NLRssInfo
-@synthesize reViewId,title,pubDate,description,dc_creator,img;
+@synthesize reViewId,title,pubDate,description,dc_creator,img,link;
 
 - (void)dealloc
 {
     [img release];
+    [link release];
     [reViewId release];
     [dc_creator release];
     [title release];

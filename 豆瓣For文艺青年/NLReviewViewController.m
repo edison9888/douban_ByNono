@@ -181,7 +181,7 @@
     NLRssInfo *info = [self.dataArr objectAtIndex:indexPath.row];
     
     NLReviewDetailViewController *vc = [[NLReviewDetailViewController alloc] init];
-    vc.reviewId = info.reViewId;
+    vc.reviewId = info.link;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController pushViewController:vc animated:YES];
     [vc release];

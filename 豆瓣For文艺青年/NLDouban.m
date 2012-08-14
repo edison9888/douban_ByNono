@@ -26,7 +26,6 @@
 }
 - (void)MiniBlog:(NLMiniBlogData *)data delegate:(NSObject<NLDoubanRequestDelegate> *)delegate
 {
-    
     self._delegate = delegate;
     NSString *userid = data.userId;
     NSString *urlString = [NSString stringWithFormat:@"http://api.douban.com/people/%@/miniblog?alt=json",userid];
@@ -48,7 +47,23 @@
 
 }
 
--(void)getAuthorizationmFriendsMiniBlogWithdelegate:(NSObject <NLDoubanRequestDelegate>*)delegate
+-(void)getAuthorizationMiniBlogWithData: (NLFriendsShuoShuoData*)data  delegate:(NSObject <NLDoubanRequestDelegate>*)delegate
+{
+    NSString *urlString = @"https://api.douban.com/shuo/statuses/user_timeline";
+    NSURL *url = [NSURL URLWithString:urlString];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:1]; 
+    NLAppDelegate *de =  (NLAppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSString *token = de.token;
+    NSString *value = [NSString stringWithFormat:@"Bearer %@",token];
+    [dic setObject:value forKey:@"Authorization"];
+    [request setRequestHeaders:dic];
+    request.delegate = self;
+    [request startAsynchronous];
+}
+
+//获取授权用户关注的广播
+-(void)getAuthorizationmFriendsMiniBlogWithData: (NLFriendsShuoShuoData*)data  delegate:(NSObject <NLDoubanRequestDelegate>*)delegate
 {//@"http://api.douban.com/people/nonoforever/miniblog/contacts";
     NSString *urlString = @"https://api.douban.com/shuo/statuses/home_timeline";
     NSURL *url = [NSURL URLWithString:urlString];

@@ -11,6 +11,8 @@
 #import "NLMyHomeViewController.h"
 #import "NLReviewViewController.h"
 #import "NLAuthorizationViewController.h"
+#import "NLAboutViewController.h"
+#import "NLDouUViewController.h"
 @interface NLRootViewController ()
 
 @end
@@ -33,43 +35,46 @@
 #pragma mark 添加四个导航按钮
 -(void)addButton
 {
+   
+    
+    GradientButton *about = [GradientButton buttonWithType:UIButtonTypeCustom];
+    about.frame = CGRectMake(180, 220, 40, 40);
+    [about setTitle:@"设置" forState:UIControlStateNormal];
+    about.titleLabel.font = [UIFont systemFontOfSize:12];
+    [about useRedDeleteStyle];
+    about.tag = 101;
+    [about addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:about];
+    
+    GradientButton *douU = [GradientButton buttonWithType:UIButtonTypeCustom];
+    douU.frame = CGRectMake(220, 220, 40, 40);
+    [douU setTitle:@"豆油" forState:UIControlStateNormal];
+    douU.titleLabel.font = [UIFont systemFontOfSize:12];
+    [douU useSimpleOrangeStyle];
+    douU.tag = 103;
+    [douU addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:douU];
+    
+       
     GradientButton *myHome = [GradientButton buttonWithType:UIButtonTypeCustom];
-    myHome.frame = CGRectMake(180, 220, 40, 40);
-    [myHome setTitle:@"说说" forState:UIControlStateNormal];
-    myHome.titleLabel.font = [UIFont systemFontOfSize:12];
-    [myHome useRedDeleteStyle];
+    myHome.frame = CGRectMake(180, 140, 80, 80);
+    [myHome setTitle:@"广播" forState:UIControlStateNormal];
+    myHome.titleLabel.font = [UIFont systemFontOfSize:20];
+    [myHome useGreenConfirmStyle];
     myHome.tag = 100;
     [myHome addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:myHome];
     
-    GradientButton *friends = [GradientButton buttonWithType:UIButtonTypeCustom];
-    friends.frame = CGRectMake(220, 220, 40, 40);
-    [friends setTitle:@"友邻" forState:UIControlStateNormal];
-    friends.titleLabel.font = [UIFont systemFontOfSize:12];
-    [friends useSimpleOrangeStyle];
-    friends.tag = 101;
-    [friends addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:friends];
-    
     GradientButton *review = [GradientButton buttonWithType:UIButtonTypeCustom];
-    review.frame = CGRectMake(180, 140, 80, 80);
-    [review setTitle:@"最新评论" forState:UIControlStateNormal];
-    review.titleLabel.font = [UIFont systemFontOfSize:18];
-    [review useGreenConfirmStyle];
+    review.frame = CGRectMake(60, 140, 120, 120);
+    [review setTitle:@"评论资讯" forState:UIControlStateNormal];
+    review.titleLabel.font = [UIFont systemFontOfSize:26];
+    [review useAlertStyle];
     review.tag = 102;
     [review addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:review];
-    
-    GradientButton *myCity = [GradientButton buttonWithType:UIButtonTypeCustom];
-    myCity.frame = CGRectMake(60, 140, 120, 120);
-    [myCity setTitle:@"同城活动" forState:UIControlStateNormal];
-    myCity.titleLabel.font = [UIFont systemFontOfSize:26];
-    [myCity useAlertStyle];
-    myCity.tag = 103;
-    [myCity addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:myCity];
+
 
 }
 
@@ -78,17 +83,11 @@
     //获取应用名作为title
     NSString *_appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
     self.title = _appName;
-    loginBtn = [GradientButton buttonWithType:UIButtonTypeCustom];
-    loginBtn.frame = CGRectMake(0, 4, 60, 30);
-    [loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-    loginBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    [loginBtn useBlackStyle];
-    loginBtn.tag = 104;
-    [loginBtn addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithTitle:@"登陆" style:UIBarButtonItemStyleBordered target:self action:@selector(login)]; 
 
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:loginBtn];
-    self.navigationItem.rightBarButtonItem = item;
-    [item release];
+    self.navigationItem.rightBarButtonItem = barItem;
+    [barItem release];
     
     _delegate = (NLAppDelegate*)[[UIApplication sharedApplication]delegate];
     
@@ -96,6 +95,14 @@
        
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+
+-(void)login
+{
+    NLAuthorizationViewController  *targetVc=[[NLAuthorizationViewController alloc ]init];
+    [self.navigationController pushViewController:targetVc animated:YES];
+    [targetVc release];
 }
 
 -(void)select:(id)sender
@@ -120,7 +127,8 @@
         }
             
         case 101:
-            //友邻
+            //关于
+            targetVc = [[NLAboutViewController alloc]init];
             break;
         case 102:
             //最新评论
@@ -128,7 +136,8 @@
             
             break;
         case 103:
-            //同城
+            //豆油
+            targetVc =[[NLDouUViewController alloc]init];
             break;
             
         case 104:

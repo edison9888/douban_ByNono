@@ -32,6 +32,8 @@
 		FF8B4D4C15C682DB00C12515 /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B4D4B15C682DB00C12515 /* UIGlossyButton.m */; };
 		FF8B4D5515C6923C00C12515 /* SlidingTabsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B4D5215C6923C00C12515 /* SlidingTabsControl.m */; };
 		FF8B4D5615C6923C00C12515 /* SlidingTabsTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B4D5415C6923C00C12515 /* SlidingTabsTab.m */; };
+		FF8BC72515DA2FAE001CB2B5 /* NLAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BC72415DA2FAE001CB2B5 /* NLAboutViewController.m */; };
+		FF8BC72815DA318C001CB2B5 /* NLDouUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BC72715DA318C001CB2B5 /* NLDouUViewController.m */; };
 		FF9C08B815CA1A160005FA26 /* NLReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9C08B715CA1A160005FA26 /* NLReviewViewController.m */; };
 		FFA0A0CA15CB66D900E17E44 /* NLRSSData.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A0C915CB66D900E17E44 /* NLRSSData.m */; };
 		FFAD9A2D15D4F5E800A362CB /* NLFriendsShuoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAD9A2C15D4F5E800A362CB /* NLFriendsShuoInfo.m */; };
@@ -112,6 +114,10 @@
 		FF8B4D5215C6923C00C12515 /* SlidingTabsControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidingTabsControl.m; sourceTree = "<group>"; };
 		FF8B4D5315C6923C00C12515 /* SlidingTabsTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidingTabsTab.h; sourceTree = "<group>"; };
 		FF8B4D5415C6923C00C12515 /* SlidingTabsTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidingTabsTab.m; sourceTree = "<group>"; };
+		FF8BC72315DA2FAE001CB2B5 /* NLAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLAboutViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAboutViewController.h"; sourceTree = "<group>"; };
+		FF8BC72415DA2FAE001CB2B5 /* NLAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLAboutViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAboutViewController.m"; sourceTree = "<group>"; };
+		FF8BC72615DA318C001CB2B5 /* NLDouUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLDouUViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLDouUViewController.h"; sourceTree = "<group>"; };
+		FF8BC72715DA318C001CB2B5 /* NLDouUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLDouUViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLDouUViewController.m"; sourceTree = "<group>"; };
 		FF9C08B615CA1A160005FA26 /* NLReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLReviewViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewViewController.h"; sourceTree = "<group>"; };
 		FF9C08B715CA1A160005FA26 /* NLReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLReviewViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewViewController.m"; sourceTree = "<group>"; };
 		FFA0A0C815CB66D900E17E44 /* NLRSSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRSSData.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLRSSData.h"; sourceTree = "<group>"; };
@@ -234,8 +240,7 @@
 				FFF0D1D615C79732009AAD2A /* NonoDouBan */,
 				FFF0D1D515C795F9009AAD2A /* Net */,
 				FF8B4D4615C6813E00C12515 /* TestClasses */,
-				FF8B4D4515C6811D00C12515 /* MyCity */,
-				FF8B4D4415C6810D00C12515 /* Search */,
+				FF8B4D4415C6810D00C12515 /* About */,
 				FF8B4D4315C680EC00C12515 /* DouU */,
 				FF8B4D4215C680DC00C12515 /* Review */,
 				FF8B4D4115C680B700C12515 /* MiniBlog */,
@@ -310,22 +315,19 @@
 		FF8B4D4315C680EC00C12515 /* DouU */ = {
 			isa = PBXGroup;
 			children = (
+				FF8BC72615DA318C001CB2B5 /* NLDouUViewController.h */,
+				FF8BC72715DA318C001CB2B5 /* NLDouUViewController.m */,
 			);
 			name = DouU;
 			sourceTree = "<group>";
 		};
-		FF8B4D4415C6810D00C12515 /* Search */ = {
+		FF8B4D4415C6810D00C12515 /* About */ = {
 			isa = PBXGroup;
 			children = (
+				FF8BC72315DA2FAE001CB2B5 /* NLAboutViewController.h */,
+				FF8BC72415DA2FAE001CB2B5 /* NLAboutViewController.m */,
 			);
-			name = Search;
-			sourceTree = "<group>";
-		};
-		FF8B4D4515C6811D00C12515 /* MyCity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = MyCity;
+			name = About;
 			sourceTree = "<group>";
 		};
 		FF8B4D4615C6813E00C12515 /* TestClasses */ = {
@@ -555,6 +557,8 @@
 				FF21404215CE555A0099C5E4 /* NLReviewDetailViewController.m in Sources */,
 				FF64947715D3AE4B00108817 /* NLFriendsShuoShuoData.m in Sources */,
 				FFAD9A2D15D4F5E800A362CB /* NLFriendsShuoInfo.m in Sources */,
+				FF8BC72515DA2FAE001CB2B5 /* NLAboutViewController.m in Sources */,
+				FF8BC72815DA318C001CB2B5 /* NLDouUViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

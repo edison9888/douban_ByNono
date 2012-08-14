@@ -16,7 +16,9 @@
     NSString *content_encoded;
     NSString *dc_creator;
     NSString *pubDate;
-        NSString *img;
+    NSString *img;
+    NSString *link;
+
     
 }
 @property(retain,nonatomic)NSString *title ;
@@ -25,4 +27,6 @@
 @property(retain,nonatomic)  NSString *pubDate;
 @property(retain,nonatomic)  NSString *dc_creator;
 @property(retain,nonatomic)  NSString *img;
+@property(retain,nonatomic) NSString *link;
+
 @end

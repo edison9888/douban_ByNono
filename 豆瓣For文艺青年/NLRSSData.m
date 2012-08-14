@@ -113,6 +113,9 @@
         NSString *img = [arr2 objectAtIndex:1];
         
         NLRssInfo *info = [[[NLRssInfo alloc]init]autorelease];
+  
+
+        info.link =[reViewLink stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         info.title = title;
         info.dc_creator = author;
         info.pubDate  = time;

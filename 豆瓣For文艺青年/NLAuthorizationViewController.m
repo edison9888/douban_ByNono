@@ -9,6 +9,7 @@
 #import "NLAuthorizationViewController.h"
 
 @interface NLAuthorizationViewController ()
+@property(retain,nonatomic)UIActivityIndicatorView *activityView;
 
 @end
 
@@ -19,7 +20,12 @@ NSString *_api_key = @"0bd73c44ae7f55d72385b4ce0b7e0185";
 NSString *_douban_register =  @"http://www.douban.com/accounts/register";
 NSString *_resure_url =  @"https://www.nono_lilith.com/?error=access_denied";
 
-
+@synthesize activityView;
+- (void)dealloc
+{
+    [activityView release];
+    [super dealloc];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +38,13 @@ NSString *_resure_url =  @"https://www.nono_lilith.com/?error=access_denied";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //loading指示器
+    self.activityView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    activityView.frame =CGRectMake(260, 0, 40, 40);
+    [self.navigationController.navigationBar addSubview:activityView];
+    
+    
     UIWebView *webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, 397)];
     [self.view addSubview:webView];
     webView.backgroundColor=[UIColor groupTableViewBackgroundColor];
@@ -78,17 +91,18 @@ NSString *_resure_url =  @"https://www.nono_lilith.com/?error=access_denied";
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    
+    [activityView startAnimating];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
 //    NSString *url =  webView.request.URL.absoluteString;
     
-    
+    [activityView stopAnimating];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    
+    [activityView stopAnimating];
+
 }
 
 

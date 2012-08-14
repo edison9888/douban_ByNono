@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/NLDouban.m"
-         timestampString = "365844636.712465"
+         timestampString = "366626415.234338"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
+         startingLineNumber = "39"
+         endingLineNumber = "39"
          landmarkName = "-RssReviewWithTag:delegate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../../../../nono/Documents/IOS/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/NLAuthorizationViewController.m"
-         timestampString = "365838873.341603"
+         timestampString = "366623089.763502"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,12 +47,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "../../../../nono/Documents/IOS/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/NLAuthorizationViewController.m"
-         timestampString = "365840014.159431"
+         timestampString = "366623089.763502"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
          landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../../../../nono/Documents/IOS/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/NLReviewDetailViewController.m"
+         timestampString = "366619441.4443"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../../../../nono/Documents/IOS/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/NLRSSData.m"
+         timestampString = "366606400.689768"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
+         landmarkName = "-parserDidEndDocument:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "../../../../nono/Documents/IOS/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/&#35910;&#29923;For&#25991;&#33402;&#38738;&#24180;/NLRSSData.m"
+         timestampString = "366606514.647932"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "118"
+         endingLineNumber = "118"
+         landmarkName = "-parserDidEndDocument:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

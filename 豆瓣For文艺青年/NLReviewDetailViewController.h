@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "NLDouban.h"
-@interface NLReviewDetailViewController : UIViewController
+@interface NLReviewDetailViewController : UIViewController<UIWebViewDelegate>
 
 {
     NSString *reviewId;
-      NLDouban *douban;
+    NLDouban *douban;
+    UIWebView *webView;
+    
+    
 }
 @property(retain,nonatomic)NSString *reviewId;
 @property(retain,nonatomic) NLDouban *douban;
+@property(retain,nonatomic) UIWebView *webView;
 @end

@@ -15,16 +15,18 @@
 #import "NLMiniBlogCell.h"
 #import "NLCommonHelper.h"
 @interface NLMyHomeViewController ()
+@property(retain,nonatomic)NLDouban *douban;
 @end
 
 @implementation NLMyHomeViewController
-@synthesize contentView,tabV,data,miniArr;
+@synthesize contentView,tabV,data,miniArr,douban;
 
 - (void)dealloc
 {
     [contentView release];
     [tabV release];
     [data release];
+    [douban release];
     [super dealloc];
 }
 
@@ -52,27 +54,14 @@
     tv.dataSource = self;
     tv.delegate = self;
      self.tabV = tv;
-//    tabV.hidden = YES;
     [self.view addSubview:tabV];
     [tv release];
-    
-    
-//    NLUserInfoView *uv = [[NLUserInfoView alloc]initWithFrame:CGRectMake(0,40, 320, 376)];
-//    
-//    self.contentView = uv;
-//    uv.nameLabel.text = @"我不是二当家";
-//    uv.addressLabel.text = @"常住:北京";
-//    [uv release];    
-//    //初始化下加载content;
-//    [self.view addSubview:contentView];
     
 }
 - (void)viewDidLoad
 {
     self.title = @"豆瓣广播";
    
-//    self.navigationController.navigationBar.tintColor = [UIColor grayColor];
-//    self.navigationController.navigationItem.backBarButtonItem.title = @"Back";
     UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 43, 320, 1)];
     [overlayView setBackgroundColor:[UIColor colorWithRed:108.0/255.0f green:108.0/255.0f blue:108.0/255.0f alpha:1.0]];
     [self.navigationController.navigationBar addSubview:overlayView]; // navBar is your UINavigationBar instance
@@ -89,9 +78,9 @@
     [super viewDidLoad];
     
     
-    NLDouban *douban = [[NLDouban alloc]init];
-   [douban getAuthorizationmFriendsMiniBlogWithdelegate:self];
-   
+    self.douban = [[NLDouban alloc]init];
+    [douban getAuthorizationmFriendsMiniBlogWithData:nil delegate:self];
+    [douban release];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -155,22 +144,15 @@ return cell;
       
             
         case 1:{
-//           UIView * self.view viewWithTag:@"100";
-            
-//            if (tabV.hidden == YES) {
-//                tabV.hidden = NO;
-//                contentView.hidden = YES;
-//            }
-//            [tabV reloadData];
-            
+            self.douban = [[NLDouban alloc]init];
+            [douban getAuthorizationMiniBlogWithData:nil delegate:self];
+            [douban release];
             break;
         }
         case 0:{
-//            
-//            if (contentView.hidden == YES) {
-//                contentView.hidden = NO;
-//                tabV.hidden = YES;
-//            }
+            self.douban = [[NLDouban alloc]init];
+            [douban getAuthorizationmFriendsMiniBlogWithData:nil delegate:self];
+            [douban release];
             break;
         }
     }
