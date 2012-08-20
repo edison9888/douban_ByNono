@@ -23,6 +23,17 @@
 		FF1764D915CA5CD600CB4149 /* NLRssInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1764D815CA5CD600CB4149 /* NLRssInfo.m */; };
 		FF21404215CE555A0099C5E4 /* NLReviewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF21404115CE555A0099C5E4 /* NLReviewDetailViewController.m */; };
 		FF2B069515CD649D006085A4 /* NLAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2B069415CD649D006085A4 /* NLAuthorizationViewController.m */; };
+		FF3A522215DFC34B005234DC /* NLFriendsShuoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3A522115DFC34B005234DC /* NLFriendsShuoCell.m */; };
+		FF3A522C15DFC5F6005234DC /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3A522A15DFC5F6005234DC /* EGORefreshTableHeaderView.m */; };
+		FF3A523515DFC900005234DC /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A522D15DFC900005234DC /* grayArrow.png */; };
+		FF3A523615DFC900005234DC /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A522E15DFC900005234DC /* grayArrow@2x.png */; };
+		FF3A523715DFC900005234DC /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A522F15DFC900005234DC /* blackArrow.png */; };
+		FF3A523815DFC900005234DC /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523015DFC900005234DC /* blackArrow@2x.png */; };
+		FF3A523915DFC900005234DC /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523115DFC900005234DC /* blueArrow.png */; };
+		FF3A523A15DFC900005234DC /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523215DFC900005234DC /* blueArrow@2x.png */; };
+		FF3A523B15DFC900005234DC /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523315DFC900005234DC /* whiteArrow.png */; };
+		FF3A523C15DFC900005234DC /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523415DFC900005234DC /* whiteArrow@2x.png */; };
+		FF3A523E15DFC958005234DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3A523D15DFC958005234DC /* QuartzCore.framework */; };
 		FF5ACEA115CBB5600063E028 /* NLReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5ACEA015CBB5600063E028 /* NLReviewCell.m */; };
 		FF5ACEA515CBBEF40063E028 /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = FF5ACEA415CBBEF40063E028 /* mushroom.png */; };
 		FF5ACEB015CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5ACEAF15CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m */; };
@@ -98,6 +109,20 @@
 		FF21404115CE555A0099C5E4 /* NLReviewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLReviewDetailViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewDetailViewController.m"; sourceTree = "<group>"; };
 		FF2B069315CD649D006085A4 /* NLAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLAuthorizationViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAuthorizationViewController.h"; sourceTree = "<group>"; };
 		FF2B069415CD649D006085A4 /* NLAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLAuthorizationViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAuthorizationViewController.m"; sourceTree = "<group>"; };
+		FF3A522015DFC34B005234DC /* NLFriendsShuoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLFriendsShuoCell.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoCell.h"; sourceTree = "<group>"; };
+		FF3A522115DFC34B005234DC /* NLFriendsShuoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLFriendsShuoCell.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoCell.m"; sourceTree = "<group>"; };
+		FF3A522915DFC5F6005234DC /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		FF3A522A15DFC5F6005234DC /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		FF3A522B15DFC5F6005234DC /* EGORefreshTableHeaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderDelegate.h; sourceTree = "<group>"; };
+		FF3A522D15DFC900005234DC /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		FF3A522E15DFC900005234DC /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		FF3A522F15DFC900005234DC /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		FF3A523015DFC900005234DC /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		FF3A523115DFC900005234DC /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		FF3A523215DFC900005234DC /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		FF3A523315DFC900005234DC /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		FF3A523415DFC900005234DC /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		FF3A523D15DFC958005234DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FF5ACE9F15CBB5600063E028 /* NLReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLReviewCell.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewCell.h"; sourceTree = "<group>"; };
 		FF5ACEA015CBB5600063E028 /* NLReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLReviewCell.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewCell.m"; sourceTree = "<group>"; };
 		FF5ACEA415CBBEF40063E028 /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
@@ -187,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3A523E15DFC958005234DC /* QuartzCore.framework in Frameworks */,
 				FFF0D21B15C7ACAF009AAD2A /* libz.1.1.3.dylib in Frameworks */,
 				FFF0D21915C7AC9D009AAD2A /* SystemConfiguration.framework in Frameworks */,
 				FFF0D21715C7AC88009AAD2A /* MobileCoreServices.framework in Frameworks */,
@@ -220,6 +246,7 @@
 		FF17017615C561BD00866DDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF3A523D15DFC958005234DC /* QuartzCore.framework */,
 				FFF0D21A15C7ACAF009AAD2A /* libz.1.1.3.dylib */,
 				FFF0D21815C7AC9C009AAD2A /* SystemConfiguration.framework */,
 				FFF0D21615C7AC88009AAD2A /* MobileCoreServices.framework */,
@@ -280,13 +307,33 @@
 				FF5ACEA015CBB5600063E028 /* NLReviewCell.m */,
 				FF5ACEAE15CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.h */,
 				FF5ACEAF15CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m */,
+				FF3A522015DFC34B005234DC /* NLFriendsShuoCell.h */,
+				FF3A522115DFC34B005234DC /* NLFriendsShuoCell.m */,
 			);
 			name = CustomClasses;
+			sourceTree = "<group>";
+		};
+		FF3A522815DFC5D4005234DC /* EGORefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FF3A522915DFC5F6005234DC /* EGORefreshTableHeaderView.h */,
+				FF3A522A15DFC5F6005234DC /* EGORefreshTableHeaderView.m */,
+				FF3A522B15DFC5F6005234DC /* EGORefreshTableHeaderDelegate.h */,
+			);
+			name = EGORefresh;
 			sourceTree = "<group>";
 		};
 		FF5ACEA315CBBEDE0063E028 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FF3A522D15DFC900005234DC /* grayArrow.png */,
+				FF3A522E15DFC900005234DC /* grayArrow@2x.png */,
+				FF3A522F15DFC900005234DC /* blackArrow.png */,
+				FF3A523015DFC900005234DC /* blackArrow@2x.png */,
+				FF3A523115DFC900005234DC /* blueArrow.png */,
+				FF3A523215DFC900005234DC /* blueArrow@2x.png */,
+				FF3A523315DFC900005234DC /* whiteArrow.png */,
+				FF3A523415DFC900005234DC /* whiteArrow@2x.png */,
 				FF5ACEA415CBBEF40063E028 /* mushroom.png */,
 			);
 			name = Resource;
@@ -386,6 +433,7 @@
 		FFF0D1DA15C797E8009AAD2A /* External */ = {
 			isa = PBXGroup;
 			children = (
+				FF3A522815DFC5D4005234DC /* EGORefresh */,
 				FF1764D015CA549C00CB4149 /* TBXML.h */,
 				FF1764D115CA549C00CB4149 /* TBXML+Compression.h */,
 				FF1764D215CA549C00CB4149 /* TBXML+HTTP.h */,
@@ -503,6 +551,14 @@
 				FF8B4D4015C65B9200C12515 /* TestView.xib in Resources */,
 				FFDF720415C7D05A0006C751 /* View.xib in Resources */,
 				FF5ACEA515CBBEF40063E028 /* mushroom.png in Resources */,
+				FF3A523515DFC900005234DC /* grayArrow.png in Resources */,
+				FF3A523615DFC900005234DC /* grayArrow@2x.png in Resources */,
+				FF3A523715DFC900005234DC /* blackArrow.png in Resources */,
+				FF3A523815DFC900005234DC /* blackArrow@2x.png in Resources */,
+				FF3A523915DFC900005234DC /* blueArrow.png in Resources */,
+				FF3A523A15DFC900005234DC /* blueArrow@2x.png in Resources */,
+				FF3A523B15DFC900005234DC /* whiteArrow.png in Resources */,
+				FF3A523C15DFC900005234DC /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +615,8 @@
 				FFAD9A2D15D4F5E800A362CB /* NLFriendsShuoInfo.m in Sources */,
 				FF8BC72515DA2FAE001CB2B5 /* NLAboutViewController.m in Sources */,
 				FF8BC72815DA318C001CB2B5 /* NLDouUViewController.m in Sources */,
+				FF3A522215DFC34B005234DC /* NLFriendsShuoCell.m in Sources */,
+				FF3A522C15DFC5F6005234DC /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

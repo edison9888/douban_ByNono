@@ -38,11 +38,14 @@
             
             //关于内容
             NSArray *attachmentsArr = [o objectForKey:@"attachments"];
+            
+            if ([attachmentsArr isEqual: [NSNull null]] || attachmentsArr.count < 1) {
+                continue;
+            }
             NSDictionary *firstDic = [attachmentsArr objectAtIndex:0];
             NSString *description = [firstDic objectForKey:@"description"];//描述
             NSString *title = [firstDic objectForKey:@"title"];//标题
-            
-            NSString *short_title = [firstDic objectForKey:@"short_title"];//比如，写了新日记，推荐照片
+            NSString *short_title = [o objectForKey:@"short_title"];//比如，写了新日记，推荐照片
             
             NLFriendsShuoInfo *info = [[[NLFriendsShuoInfo alloc] init]autorelease];
             info.username = screen_name;
@@ -51,6 +54,8 @@
             info.title = title;
             info.content = description;
             info.short_title = short_title;
+            
+            [arrInfo addObject:info];
             
         }
         

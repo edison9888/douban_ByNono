@@ -11,18 +11,22 @@
 #import "NLUserInfoView.h"
 #import "NLDouban.h"
 #import "NLMiniBlogData.h"
-@interface NLMyHomeViewController : UIViewController<SlidingTabsControlDelegate,UITableViewDelegate,UITableViewDataSource,NLDoubanRequestDelegate>
+#import "EGORefreshTableHeaderView.h"
+@class NLFriendsShuoShuoData;
+@interface NLMyHomeViewController : UIViewController<SlidingTabsControlDelegate,UITableViewDelegate,UITableViewDataSource,NLDoubanRequestDelegate,EGORefreshTableHeaderDelegate>
 {
     UITableView *tabV;
     NLUserInfoView *contentView;
-    NLMiniBlogData *data;
+    NLFriendsShuoShuoData *data;
     
+    EGORefreshTableHeaderView *refresView;
     NSMutableArray *miniArr;
+    BOOL isLoading;
     
 }
 @property(retain,nonatomic)UITableView *tabV;
 @property(retain,nonatomic)NLUserInfoView *contentView;
-@property(retain,nonatomic)NLMiniBlogData *data;
+@property(retain,nonatomic)NLFriendsShuoShuoData *data;
 @property(retain,nonatomic)NSMutableArray *miniArr;
-
+@property(retain,nonatomic) EGORefreshTableHeaderView *refresView;
 @end

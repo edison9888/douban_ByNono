@@ -49,7 +49,8 @@
 
 -(void)getAuthorizationMiniBlogWithData: (NLFriendsShuoShuoData*)data  delegate:(NSObject <NLDoubanRequestDelegate>*)delegate
 {
-    NSString *urlString = @"https://api.douban.com/shuo/statuses/user_timeline";
+    self._delegate = delegate;
+    NSString *urlString = @"https://api.douban.com/shuo/statuses/mentions";
     NSURL *url = [NSURL URLWithString:urlString];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:1]; 
@@ -65,6 +66,7 @@
 //获取授权用户关注的广播
 -(void)getAuthorizationmFriendsMiniBlogWithData: (NLFriendsShuoShuoData*)data  delegate:(NSObject <NLDoubanRequestDelegate>*)delegate
 {//@"http://api.douban.com/people/nonoforever/miniblog/contacts";
+    self._delegate = delegate;
     NSString *urlString = @"https://api.douban.com/shuo/statuses/home_timeline";
     NSURL *url = [NSURL URLWithString:urlString];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
