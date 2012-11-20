@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF11F1FB164CDDA30021EEC4 /* NLFriendsShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF11F1FA164CDDA30021EEC4 /* NLFriendsShareData.m */; };
+		FF11F1FF164CDE5D0021EEC4 /* NLFriendShareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF11F1FE164CDE5D0021EEC4 /* NLFriendShareInfo.m */; };
 		FF17017815C561BD00866DDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF17017715C561BD00866DDE /* UIKit.framework */; };
 		FF17017A15C561BD00866DDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF17017915C561BD00866DDE /* Foundation.framework */; };
 		FF17017C15C561BD00866DDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF17017B15C561BD00866DDE /* CoreGraphics.framework */; };
@@ -21,8 +23,21 @@
 		FF1764CD15CA548F00CB4149 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1764CA15CA548F00CB4149 /* TBXML+Compression.m */; };
 		FF1764CE15CA548F00CB4149 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1764CB15CA548F00CB4149 /* TBXML+HTTP.m */; };
 		FF1764D915CA5CD600CB4149 /* NLRssInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1764D815CA5CD600CB4149 /* NLRssInfo.m */; };
+		FF1769A81650CE9F00D360E4 /* NLMoreReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1769A71650CE9E00D360E4 /* NLMoreReviewViewController.m */; };
+		FF1769AB1650D03900D360E4 /* NLMoreReviewsData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1769AA1650D03900D360E4 /* NLMoreReviewsData.m */; };
+		FF19BDA81647B5B000F0D51B /* SearchObjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF19BDA71647B5B000F0D51B /* SearchObjectCell.xib */; };
+		FF19BDB41647BA0400F0D51B /* NLSearchObjectCellCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19BDB31647BA0400F0D51B /* NLSearchObjectCellCell.m */; };
 		FF21404215CE555A0099C5E4 /* NLReviewDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF21404115CE555A0099C5E4 /* NLReviewDetailViewController.m */; };
+		FF2292A21648DAC400C2292D /* NLSearchMovieData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2292A11648DAC400C2292D /* NLSearchMovieData.m */; };
+		FF23AE4F16533B51009A4372 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF23AE4C16533B51009A4372 /* Default-568h@2x.png */; };
+		FF23AE5016533B51009A4372 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FF23AE4D16533B51009A4372 /* Default.png */; };
+		FF23AE5116533B51009A4372 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF23AE4E16533B51009A4372 /* Default@2x.png */; };
+		FF23AE53165342EA009A4372 /* loading80*120.png in Resources */ = {isa = PBXBuildFile; fileRef = FF23AE52165342EA009A4372 /* loading80*120.png */; };
+		FF23AE5D16534CBE009A4372 /* loading_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FF23AE5B16534CBE009A4372 /* loading_bg.png */; };
+		FF23AE5E16534CBE009A4372 /* loading_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF23AE5C16534CBE009A4372 /* loading_bg@2x.png */; };
 		FF2B069515CD649D006085A4 /* NLAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2B069415CD649D006085A4 /* NLAuthorizationViewController.m */; };
+		FF37F7CB164BAA9A00EF4FCA /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF37F7C9164BAA9A00EF4FCA /* icon@2x.png */; };
+		FF37F7CC164BAA9A00EF4FCA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF37F7CA164BAA9A00EF4FCA /* icon.png */; };
 		FF3A522215DFC34B005234DC /* NLFriendsShuoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3A522115DFC34B005234DC /* NLFriendsShuoCell.m */; };
 		FF3A522C15DFC5F6005234DC /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3A522A15DFC5F6005234DC /* EGORefreshTableHeaderView.m */; };
 		FF3A523515DFC900005234DC /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A522D15DFC900005234DC /* grayArrow.png */; };
@@ -34,10 +49,15 @@
 		FF3A523B15DFC900005234DC /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523315DFC900005234DC /* whiteArrow.png */; };
 		FF3A523C15DFC900005234DC /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3A523415DFC900005234DC /* whiteArrow@2x.png */; };
 		FF3A523E15DFC958005234DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3A523D15DFC958005234DC /* QuartzCore.framework */; };
+		FF40D6241651E5B200C48F8D /* NLBookReview.m in Sources */ = {isa = PBXBuildFile; fileRef = FF40D6231651E5B200C48F8D /* NLBookReview.m */; };
+		FF40D6281651EFA400C48F8D /* NLMusicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF40D6271651EFA400C48F8D /* NLMusicInfo.m */; };
+		FF40D62F1651FDDE00C48F8D /* NLMusicReviewData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF40D62E1651FDDD00C48F8D /* NLMusicReviewData.m */; };
 		FF5ACEA115CBB5600063E028 /* NLReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5ACEA015CBB5600063E028 /* NLReviewCell.m */; };
 		FF5ACEA515CBBEF40063E028 /* mushroom.png in Resources */ = {isa = PBXBuildFile; fileRef = FF5ACEA415CBBEF40063E028 /* mushroom.png */; };
 		FF5ACEB015CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5ACEAF15CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m */; };
 		FF64947715D3AE4B00108817 /* NLFriendsShuoShuoData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF64947615D3AE4B00108817 /* NLFriendsShuoShuoData.m */; };
+		FF8970FE16465E5800831BD4 /* NLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8970FC16465E5800831BD4 /* NLSearchViewController.m */; };
+		FF8970FF16465E5800831BD4 /* NLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8970FD16465E5800831BD4 /* NLSearchViewController.xib */; };
 		FF8B4D4015C65B9200C12515 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8B4D3F15C65B9200C12515 /* TestView.xib */; };
 		FF8B4D4915C682A900C12515 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B4D4815C682A900C12515 /* GradientButton.m */; };
 		FF8B4D4C15C682DB00C12515 /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B4D4B15C682DB00C12515 /* UIGlossyButton.m */; };
@@ -45,14 +65,21 @@
 		FF8B4D5615C6923C00C12515 /* SlidingTabsTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B4D5415C6923C00C12515 /* SlidingTabsTab.m */; };
 		FF8BC72515DA2FAE001CB2B5 /* NLAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BC72415DA2FAE001CB2B5 /* NLAboutViewController.m */; };
 		FF8BC72815DA318C001CB2B5 /* NLDouUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BC72715DA318C001CB2B5 /* NLDouUViewController.m */; };
+		FF982D4B1648C32800D61019 /* NLSearchObjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF982D491648C32800D61019 /* NLSearchObjectDetailViewController.m */; };
+		FF982D4C1648C32800D61019 /* NLSearchObjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF982D4A1648C32800D61019 /* NLSearchObjectDetailViewController.xib */; };
 		FF9C08B815CA1A160005FA26 /* NLReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9C08B715CA1A160005FA26 /* NLReviewViewController.m */; };
 		FFA0A0CA15CB66D900E17E44 /* NLRSSData.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA0A0C915CB66D900E17E44 /* NLRSSData.m */; };
 		FFAD9A2D15D4F5E800A362CB /* NLFriendsShuoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAD9A2C15D4F5E800A362CB /* NLFriendsShuoInfo.m */; };
+		FFCACB8D15E216240087419E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCACB8C15E216240087419E /* MBProgressHUD.m */; };
+		FFCCF9EE1647C4DE00F2B1A2 /* NLMovieInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCCF9ED1647C4DE00F2B1A2 /* NLMovieInfo.m */; };
+		FFDCD79215E5C8EA00B73C81 /* NLShuoshuoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDCD79115E5C8EA00B73C81 /* NLShuoshuoDetailViewController.m */; };
 		FFDF71FB15C7B6F70006C751 /* NLMyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF71FA15C7B6F70006C751 /* NLMyHomeViewController.m */; };
 		FFDF71FF15C7BD9B0006C751 /* NLMiniBlogInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF71FE15C7BD9B0006C751 /* NLMiniBlogInfo.m */; };
 		FFDF720215C7CEDB0006C751 /* NLMiniBlogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF720115C7CEDB0006C751 /* NLMiniBlogCell.m */; };
 		FFDF720415C7D05A0006C751 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFDF720315C7D05A0006C751 /* View.xib */; };
 		FFDF720815C7DDA50006C751 /* NLCommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF720715C7DDA40006C751 /* NLCommonHelper.m */; };
+		FFEA97E21647623400AAA8AE /* NLSearchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEA97E11647623400AAA8AE /* NLSearchObject.m */; };
+		FFEA97EA1647A8CC00AAA8AE /* NLBookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEA97E91647A8CC00AAA8AE /* NLBookInfo.m */; };
 		FFF0D1D315C787D5009AAD2A /* NLUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0D1D215C787D5009AAD2A /* NLUserInfoView.m */; };
 		FFF0D1EF15C79845009AAD2A /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0D1DC15C79845009AAD2A /* ASIAuthenticationDialog.m */; };
 		FFF0D1F015C79845009AAD2A /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF0D1DF15C79845009AAD2A /* ASIDataCompressor.m */; };
@@ -78,6 +105,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF11F1F9164CDDA30021EEC4 /* NLFriendsShareData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLFriendsShareData.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShareData.h"; sourceTree = "<group>"; };
+		FF11F1FA164CDDA30021EEC4 /* NLFriendsShareData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLFriendsShareData.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShareData.m"; sourceTree = "<group>"; };
+		FF11F1FD164CDE5D0021EEC4 /* NLFriendShareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLFriendShareInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendShareInfo.h"; sourceTree = "<group>"; };
+		FF11F1FE164CDE5D0021EEC4 /* NLFriendShareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLFriendShareInfo.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendShareInfo.m"; sourceTree = "<group>"; };
+		FF11F200164CEE810021EEC4 /* NonoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NonoConfig.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NonoConfig.h"; sourceTree = "<group>"; };
 		FF16FE5915D7536F0055F802 /* NLUserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLUserInfoView.h; sourceTree = "<group>"; };
 		FF17017315C561BD00866DDE /* 豆瓣骚年.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "豆瓣骚年.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF17017715C561BD00866DDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -105,10 +137,27 @@
 		FF1764D215CA549C00CB4149 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
 		FF1764D715CA5CD600CB4149 /* NLRssInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRssInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLRssInfo.h"; sourceTree = "<group>"; };
 		FF1764D815CA5CD600CB4149 /* NLRssInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLRssInfo.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLRssInfo.m"; sourceTree = "<group>"; };
+		FF1769A61650CE9E00D360E4 /* NLMoreReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMoreReviewViewController.h; sourceTree = "<group>"; };
+		FF1769A71650CE9E00D360E4 /* NLMoreReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMoreReviewViewController.m; sourceTree = "<group>"; };
+		FF1769A91650D03900D360E4 /* NLMoreReviewsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMoreReviewsData.h; sourceTree = "<group>"; };
+		FF1769AA1650D03900D360E4 /* NLMoreReviewsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMoreReviewsData.m; sourceTree = "<group>"; };
+		FF19BDA71647B5B000F0D51B /* SearchObjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchObjectCell.xib; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/SearchObjectCell.xib"; sourceTree = "<group>"; };
+		FF19BDB21647BA0400F0D51B /* NLSearchObjectCellCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLSearchObjectCellCell.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObjectCellCell.h"; sourceTree = "<group>"; };
+		FF19BDB31647BA0400F0D51B /* NLSearchObjectCellCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLSearchObjectCellCell.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObjectCellCell.m"; sourceTree = "<group>"; };
 		FF21404015CE555A0099C5E4 /* NLReviewDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLReviewDetailViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewDetailViewController.h"; sourceTree = "<group>"; };
 		FF21404115CE555A0099C5E4 /* NLReviewDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLReviewDetailViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewDetailViewController.m"; sourceTree = "<group>"; };
+		FF2292A01648DAC400C2292D /* NLSearchMovieData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLSearchMovieData.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchMovieData.h"; sourceTree = "<group>"; };
+		FF2292A11648DAC400C2292D /* NLSearchMovieData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLSearchMovieData.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchMovieData.m"; sourceTree = "<group>"; };
+		FF23AE4C16533B51009A4372 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FF23AE4D16533B51009A4372 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FF23AE4E16533B51009A4372 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FF23AE52165342EA009A4372 /* loading80*120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading80*120.png"; sourceTree = "<group>"; };
+		FF23AE5B16534CBE009A4372 /* loading_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_bg.png; sourceTree = "<group>"; };
+		FF23AE5C16534CBE009A4372 /* loading_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_bg@2x.png"; sourceTree = "<group>"; };
 		FF2B069315CD649D006085A4 /* NLAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLAuthorizationViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAuthorizationViewController.h"; sourceTree = "<group>"; };
 		FF2B069415CD649D006085A4 /* NLAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLAuthorizationViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAuthorizationViewController.m"; sourceTree = "<group>"; };
+		FF37F7C9164BAA9A00EF4FCA /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		FF37F7CA164BAA9A00EF4FCA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		FF3A522015DFC34B005234DC /* NLFriendsShuoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLFriendsShuoCell.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoCell.h"; sourceTree = "<group>"; };
 		FF3A522115DFC34B005234DC /* NLFriendsShuoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLFriendsShuoCell.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoCell.m"; sourceTree = "<group>"; };
 		FF3A522915DFC5F6005234DC /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
@@ -123,6 +172,13 @@
 		FF3A523315DFC900005234DC /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		FF3A523415DFC900005234DC /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		FF3A523D15DFC958005234DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FF40D6221651E5B200C48F8D /* NLBookReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBookReview.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLBookReview.h"; sourceTree = "<group>"; };
+		FF40D6231651E5B200C48F8D /* NLBookReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBookReview.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLBookReview.m"; sourceTree = "<group>"; };
+		FF40D6261651EFA400C48F8D /* NLMusicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLMusicInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMusicInfo.h"; sourceTree = "<group>"; };
+		FF40D6271651EFA400C48F8D /* NLMusicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLMusicInfo.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMusicInfo.m"; sourceTree = "<group>"; };
+		FF40D62D1651FDDD00C48F8D /* NLMusicReviewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLMusicReviewData.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMusicReviewData.h"; sourceTree = "<group>"; };
+		FF40D62E1651FDDD00C48F8D /* NLMusicReviewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLMusicReviewData.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMusicReviewData.m"; sourceTree = "<group>"; };
+		FF44CCBA164CA5A60015ACDD /* DefineHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefineHeader.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/DefineHeader.h"; sourceTree = "<group>"; };
 		FF5ACE9F15CBB5600063E028 /* NLReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLReviewCell.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewCell.h"; sourceTree = "<group>"; };
 		FF5ACEA015CBB5600063E028 /* NLReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLReviewCell.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewCell.m"; sourceTree = "<group>"; };
 		FF5ACEA415CBBEF40063E028 /* mushroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mushroom.png; sourceTree = "<group>"; };
@@ -130,6 +186,9 @@
 		FF5ACEAF15CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+NLDispatchLoadImage.m"; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/UIImageView+NLDispatchLoadImage.m"; sourceTree = "<group>"; };
 		FF64947515D3AE4B00108817 /* NLFriendsShuoShuoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLFriendsShuoShuoData.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoShuoData.h"; sourceTree = "<group>"; };
 		FF64947615D3AE4B00108817 /* NLFriendsShuoShuoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLFriendsShuoShuoData.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoShuoData.m"; sourceTree = "<group>"; };
+		FF8970FB16465E5800831BD4 /* NLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLSearchViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchViewController.h"; sourceTree = "<group>"; };
+		FF8970FC16465E5800831BD4 /* NLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLSearchViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchViewController.m"; sourceTree = "<group>"; };
+		FF8970FD16465E5800831BD4 /* NLSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NLSearchViewController.xib; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchViewController.xib"; sourceTree = "<group>"; };
 		FF8B4D3F15C65B9200C12515 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestView.xib; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/TestView.xib"; sourceTree = "<group>"; };
 		FF8B4D4715C682A900C12515 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		FF8B4D4815C682A900C12515 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
@@ -143,12 +202,21 @@
 		FF8BC72415DA2FAE001CB2B5 /* NLAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLAboutViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLAboutViewController.m"; sourceTree = "<group>"; };
 		FF8BC72615DA318C001CB2B5 /* NLDouUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLDouUViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLDouUViewController.h"; sourceTree = "<group>"; };
 		FF8BC72715DA318C001CB2B5 /* NLDouUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLDouUViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLDouUViewController.m"; sourceTree = "<group>"; };
+		FF982D481648C32800D61019 /* NLSearchObjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLSearchObjectDetailViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObjectDetailViewController.h"; sourceTree = "<group>"; };
+		FF982D491648C32800D61019 /* NLSearchObjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLSearchObjectDetailViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObjectDetailViewController.m"; sourceTree = "<group>"; };
+		FF982D4A1648C32800D61019 /* NLSearchObjectDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NLSearchObjectDetailViewController.xib; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObjectDetailViewController.xib"; sourceTree = "<group>"; };
 		FF9C08B615CA1A160005FA26 /* NLReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLReviewViewController.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewViewController.h"; sourceTree = "<group>"; };
 		FF9C08B715CA1A160005FA26 /* NLReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLReviewViewController.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLReviewViewController.m"; sourceTree = "<group>"; };
 		FFA0A0C815CB66D900E17E44 /* NLRSSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRSSData.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLRSSData.h"; sourceTree = "<group>"; };
 		FFA0A0C915CB66D900E17E44 /* NLRSSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLRSSData.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLRSSData.m"; sourceTree = "<group>"; };
 		FFAD9A2B15D4F5E800A362CB /* NLFriendsShuoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLFriendsShuoInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoInfo.h"; sourceTree = "<group>"; };
 		FFAD9A2C15D4F5E800A362CB /* NLFriendsShuoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLFriendsShuoInfo.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLFriendsShuoInfo.m"; sourceTree = "<group>"; };
+		FFCACB8B15E216240087419E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FFCACB8C15E216240087419E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FFCCF9EC1647C4DE00F2B1A2 /* NLMovieInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLMovieInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMovieInfo.h"; sourceTree = "<group>"; };
+		FFCCF9ED1647C4DE00F2B1A2 /* NLMovieInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLMovieInfo.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMovieInfo.m"; sourceTree = "<group>"; };
+		FFDCD79015E5C8EA00B73C81 /* NLShuoshuoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLShuoshuoDetailViewController.h; sourceTree = "<group>"; };
+		FFDCD79115E5C8EA00B73C81 /* NLShuoshuoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLShuoshuoDetailViewController.m; sourceTree = "<group>"; };
 		FFDF71F915C7B6F70006C751 /* NLMyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMyHomeViewController.h; sourceTree = "<group>"; };
 		FFDF71FA15C7B6F70006C751 /* NLMyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMyHomeViewController.m; sourceTree = "<group>"; };
 		FFDF71FD15C7BD9B0006C751 /* NLMiniBlogInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLMiniBlogInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLMiniBlogInfo.h"; sourceTree = "<group>"; };
@@ -159,6 +227,10 @@
 		FFDF720515C7DCD50006C751 /* NLDouBanConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLDouBanConfiguration.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLDouBanConfiguration.h"; sourceTree = "<group>"; };
 		FFDF720615C7DDA40006C751 /* NLCommonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLCommonHelper.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLCommonHelper.h"; sourceTree = "<group>"; };
 		FFDF720715C7DDA40006C751 /* NLCommonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLCommonHelper.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLCommonHelper.m"; sourceTree = "<group>"; };
+		FFEA97E01647623400AAA8AE /* NLSearchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLSearchObject.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObject.h"; sourceTree = "<group>"; };
+		FFEA97E11647623400AAA8AE /* NLSearchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLSearchObject.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLSearchObject.m"; sourceTree = "<group>"; };
+		FFEA97E81647A8CC00AAA8AE /* NLBookInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBookInfo.h; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLBookInfo.h"; sourceTree = "<group>"; };
+		FFEA97E91647A8CC00AAA8AE /* NLBookInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBookInfo.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLBookInfo.m"; sourceTree = "<group>"; };
 		FFF0D1D215C787D5009AAD2A /* NLUserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLUserInfoView.m; path = "../../../../../nono/Documents/IOS/豆瓣For文艺青年/豆瓣For文艺青年/NLUserInfoView.m"; sourceTree = "<group>"; };
 		FFF0D1DB15C79845009AAD2A /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		FFF0D1DC15C79845009AAD2A /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -268,11 +340,12 @@
 				FFF0D1D515C795F9009AAD2A /* Net */,
 				FF8B4D4615C6813E00C12515 /* TestClasses */,
 				FF8B4D4415C6810D00C12515 /* About */,
-				FF8B4D4315C680EC00C12515 /* DouU */,
+				FF8B4D4315C680EC00C12515 /* search */,
 				FF8B4D4215C680DC00C12515 /* Review */,
 				FF8B4D4115C680B700C12515 /* MiniBlog */,
 				FF17018E15C5620900866DDE /* CustomClasses */,
 				FF17017E15C561BD00866DDE /* Supporting Files */,
+				FF44CCBA164CA5A60015ACDD /* DefineHeader.h */,
 			);
 			path = "豆瓣For文艺青年";
 			sourceTree = "<group>";
@@ -309,6 +382,8 @@
 				FF5ACEAF15CBC64E0063E028 /* UIImageView+NLDispatchLoadImage.m */,
 				FF3A522015DFC34B005234DC /* NLFriendsShuoCell.h */,
 				FF3A522115DFC34B005234DC /* NLFriendsShuoCell.m */,
+				FF19BDB21647BA0400F0D51B /* NLSearchObjectCellCell.h */,
+				FF19BDB31647BA0400F0D51B /* NLSearchObjectCellCell.m */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -323,9 +398,24 @@
 			name = EGORefresh;
 			sourceTree = "<group>";
 		};
+		FF40D635165230EB00C48F8D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		FF5ACEA315CBBEDE0063E028 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FF23AE5B16534CBE009A4372 /* loading_bg.png */,
+				FF23AE5C16534CBE009A4372 /* loading_bg@2x.png */,
+				FF23AE52165342EA009A4372 /* loading80*120.png */,
+				FF23AE4C16533B51009A4372 /* Default-568h@2x.png */,
+				FF23AE4D16533B51009A4372 /* Default.png */,
+				FF23AE4E16533B51009A4372 /* Default@2x.png */,
+				FF37F7C9164BAA9A00EF4FCA /* icon@2x.png */,
+				FF37F7CA164BAA9A00EF4FCA /* icon.png */,
 				FF3A522D15DFC900005234DC /* grayArrow.png */,
 				FF3A522E15DFC900005234DC /* grayArrow@2x.png */,
 				FF3A522F15DFC900005234DC /* blackArrow.png */,
@@ -343,7 +433,10 @@
 			isa = PBXGroup;
 			children = (
 				FFDF71F915C7B6F70006C751 /* NLMyHomeViewController.h */,
+				FF19BDA71647B5B000F0D51B /* SearchObjectCell.xib */,
 				FFDF71FA15C7B6F70006C751 /* NLMyHomeViewController.m */,
+				FFDCD79015E5C8EA00B73C81 /* NLShuoshuoDetailViewController.h */,
+				FFDCD79115E5C8EA00B73C81 /* NLShuoshuoDetailViewController.m */,
 			);
 			name = MiniBlog;
 			sourceTree = "<group>";
@@ -359,13 +452,21 @@
 			name = Review;
 			sourceTree = "<group>";
 		};
-		FF8B4D4315C680EC00C12515 /* DouU */ = {
+		FF8B4D4315C680EC00C12515 /* search */ = {
 			isa = PBXGroup;
 			children = (
 				FF8BC72615DA318C001CB2B5 /* NLDouUViewController.h */,
 				FF8BC72715DA318C001CB2B5 /* NLDouUViewController.m */,
+				FF8970FB16465E5800831BD4 /* NLSearchViewController.h */,
+				FF8970FC16465E5800831BD4 /* NLSearchViewController.m */,
+				FF8970FD16465E5800831BD4 /* NLSearchViewController.xib */,
+				FF982D481648C32800D61019 /* NLSearchObjectDetailViewController.h */,
+				FF982D491648C32800D61019 /* NLSearchObjectDetailViewController.m */,
+				FF982D4A1648C32800D61019 /* NLSearchObjectDetailViewController.xib */,
+				FF1769A61650CE9E00D360E4 /* NLMoreReviewViewController.h */,
+				FF1769A71650CE9E00D360E4 /* NLMoreReviewViewController.m */,
 			);
-			name = DouU;
+			name = search;
 			sourceTree = "<group>";
 		};
 		FF8B4D4415C6810D00C12515 /* About */ = {
@@ -392,6 +493,15 @@
 			name = TestClasses;
 			sourceTree = "<group>";
 		};
+		FFCACB8915E215D20087419E /* MBHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FFCACB8B15E216240087419E /* MBProgressHUD.h */,
+				FFCACB8C15E216240087419E /* MBProgressHUD.m */,
+			);
+			name = MBHUD;
+			sourceTree = "<group>";
+		};
 		FFDF71FC15C7BD7B0006C751 /* CMeta */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +511,14 @@
 				FF1764D815CA5CD600CB4149 /* NLRssInfo.m */,
 				FFAD9A2B15D4F5E800A362CB /* NLFriendsShuoInfo.h */,
 				FFAD9A2C15D4F5E800A362CB /* NLFriendsShuoInfo.m */,
+				FFEA97E81647A8CC00AAA8AE /* NLBookInfo.h */,
+				FFEA97E91647A8CC00AAA8AE /* NLBookInfo.m */,
+				FFCCF9EC1647C4DE00F2B1A2 /* NLMovieInfo.h */,
+				FFCCF9ED1647C4DE00F2B1A2 /* NLMovieInfo.m */,
+				FF11F1FD164CDE5D0021EEC4 /* NLFriendShareInfo.h */,
+				FF11F1FE164CDE5D0021EEC4 /* NLFriendShareInfo.m */,
+				FF40D6261651EFA400C48F8D /* NLMusicInfo.h */,
+				FF40D6271651EFA400C48F8D /* NLMusicInfo.m */,
 			);
 			name = CMeta;
 			sourceTree = "<group>";
@@ -426,6 +544,7 @@
 				FF17019015C5632600866DDE /* NLRootViewController.m */,
 				FF2B069315CD649D006085A4 /* NLAuthorizationViewController.h */,
 				FF2B069415CD649D006085A4 /* NLAuthorizationViewController.m */,
+				FF11F200164CEE810021EEC4 /* NonoConfig.h */,
 			);
 			name = NonoDouBan;
 			sourceTree = "<group>";
@@ -433,6 +552,8 @@
 		FFF0D1DA15C797E8009AAD2A /* External */ = {
 			isa = PBXGroup;
 			children = (
+				FF40D635165230EB00C48F8D /* Reachability */,
+				FFCACB8915E215D20087419E /* MBHUD */,
 				FF3A522815DFC5D4005234DC /* EGORefresh */,
 				FF1764D015CA549C00CB4149 /* TBXML.h */,
 				FF1764D115CA549C00CB4149 /* TBXML+Compression.h */,
@@ -491,6 +612,18 @@
 				FFA0A0C915CB66D900E17E44 /* NLRSSData.m */,
 				FF64947515D3AE4B00108817 /* NLFriendsShuoShuoData.h */,
 				FF64947615D3AE4B00108817 /* NLFriendsShuoShuoData.m */,
+				FFEA97E01647623400AAA8AE /* NLSearchObject.h */,
+				FFEA97E11647623400AAA8AE /* NLSearchObject.m */,
+				FF2292A01648DAC400C2292D /* NLSearchMovieData.h */,
+				FF2292A11648DAC400C2292D /* NLSearchMovieData.m */,
+				FF11F1F9164CDDA30021EEC4 /* NLFriendsShareData.h */,
+				FF11F1FA164CDDA30021EEC4 /* NLFriendsShareData.m */,
+				FF1769A91650D03900D360E4 /* NLMoreReviewsData.h */,
+				FF1769AA1650D03900D360E4 /* NLMoreReviewsData.m */,
+				FF40D6221651E5B200C48F8D /* NLBookReview.h */,
+				FF40D6231651E5B200C48F8D /* NLBookReview.m */,
+				FF40D62D1651FDDD00C48F8D /* NLMusicReviewData.h */,
+				FF40D62E1651FDDD00C48F8D /* NLMusicReviewData.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -559,6 +692,17 @@
 				FF3A523A15DFC900005234DC /* blueArrow@2x.png in Resources */,
 				FF3A523B15DFC900005234DC /* whiteArrow.png in Resources */,
 				FF3A523C15DFC900005234DC /* whiteArrow@2x.png in Resources */,
+				FF8970FF16465E5800831BD4 /* NLSearchViewController.xib in Resources */,
+				FF19BDA81647B5B000F0D51B /* SearchObjectCell.xib in Resources */,
+				FF982D4C1648C32800D61019 /* NLSearchObjectDetailViewController.xib in Resources */,
+				FF37F7CB164BAA9A00EF4FCA /* icon@2x.png in Resources */,
+				FF37F7CC164BAA9A00EF4FCA /* icon.png in Resources */,
+				FF23AE4F16533B51009A4372 /* Default-568h@2x.png in Resources */,
+				FF23AE5016533B51009A4372 /* Default.png in Resources */,
+				FF23AE5116533B51009A4372 /* Default@2x.png in Resources */,
+				FF23AE53165342EA009A4372 /* loading80*120.png in Resources */,
+				FF23AE5D16534CBE009A4372 /* loading_bg.png in Resources */,
+				FF23AE5E16534CBE009A4372 /* loading_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +761,22 @@
 				FF8BC72815DA318C001CB2B5 /* NLDouUViewController.m in Sources */,
 				FF3A522215DFC34B005234DC /* NLFriendsShuoCell.m in Sources */,
 				FF3A522C15DFC5F6005234DC /* EGORefreshTableHeaderView.m in Sources */,
+				FFCACB8D15E216240087419E /* MBProgressHUD.m in Sources */,
+				FFDCD79215E5C8EA00B73C81 /* NLShuoshuoDetailViewController.m in Sources */,
+				FF8970FE16465E5800831BD4 /* NLSearchViewController.m in Sources */,
+				FFEA97E21647623400AAA8AE /* NLSearchObject.m in Sources */,
+				FFEA97EA1647A8CC00AAA8AE /* NLBookInfo.m in Sources */,
+				FF19BDB41647BA0400F0D51B /* NLSearchObjectCellCell.m in Sources */,
+				FFCCF9EE1647C4DE00F2B1A2 /* NLMovieInfo.m in Sources */,
+				FF982D4B1648C32800D61019 /* NLSearchObjectDetailViewController.m in Sources */,
+				FF2292A21648DAC400C2292D /* NLSearchMovieData.m in Sources */,
+				FF11F1FB164CDDA30021EEC4 /* NLFriendsShareData.m in Sources */,
+				FF11F1FF164CDE5D0021EEC4 /* NLFriendShareInfo.m in Sources */,
+				FF1769A81650CE9F00D360E4 /* NLMoreReviewViewController.m in Sources */,
+				FF1769AB1650D03900D360E4 /* NLMoreReviewsData.m in Sources */,
+				FF40D6241651E5B200C48F8D /* NLBookReview.m in Sources */,
+				FF40D6281651EFA400C48F8D /* NLMusicInfo.m in Sources */,
+				FF40D62F1651FDDE00C48F8D /* NLMusicReviewData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +813,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -663,15 +823,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yanan zhu";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0DD0AC72-0878-4454-8E29-EBEE78E8D453";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -680,10 +841,13 @@
 		FF17018C15C561BD00866DDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yanan zhu (V7X642S22P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "豆瓣For文艺青年/豆瓣骚年-Prefix.pch";
 				INFOPLIST_FILE = "豆瓣For文艺青年/豆瓣骚年-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "豆瓣骚年";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F6BF9D9B-EE81-4634-A6BD-05989D3E7890";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -691,10 +855,13 @@
 		FF17018D15C561BD00866DDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yanan zhu";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "豆瓣For文艺青年/豆瓣骚年-Prefix.pch";
 				INFOPLIST_FILE = "豆瓣For文艺青年/豆瓣骚年-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "豆瓣骚年";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0DD0AC72-0878-4454-8E29-EBEE78E8D453";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

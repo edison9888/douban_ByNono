@@ -35,7 +35,7 @@
 {
 //    NSLog(@"%@",NSStringFromSelector(_cmd) );
     
-    parserObjects = [[NSMutableArray alloc]init];
+    parserObjects = [[[NSMutableArray alloc]init] autorelease];
    // twitterDic = [[NSMutableDictionary alloc]init];
 //      currentText = [[NSString alloc ] init ];
 }
@@ -130,7 +130,7 @@
 - (void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock
 {
 //    NSLog(@"%@",NSStringFromSelector(_cmd) );
-    Cdata =[[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
+    Cdata =[[[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding] autorelease];
 }
 
 

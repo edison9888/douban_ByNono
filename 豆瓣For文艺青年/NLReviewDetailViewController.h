@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NLDouban.h"
-@interface NLReviewDetailViewController : UIViewController<UIWebViewDelegate>
+@interface NLReviewDetailViewController : UIViewController<UIWebViewDelegate,UIAlertViewDelegate>
 
 {
     NSString *reviewId;

@@ -7,7 +7,7 @@
 //
 
 #import "NLMiniBlogCell.h"
-
+#import "NonoConfig.h"
 @implementation NLMiniBlogCell
 @synthesize imageV,title,text,who,short_title,content,contentGg;
 
@@ -37,7 +37,7 @@
         self.who = [[UILabel alloc]initWithFrame:CGRectMake(45, 10, 100, 20)];
         who.font = [UIFont systemFontOfSize:13];
         who.backgroundColor = [UIColor clearColor];
-        who.textColor = [UIColor blackColor];
+        who.textColor = CustomColor_Ligth_Blue;
         [self.contentView addSubview:who];
         [who release];
         

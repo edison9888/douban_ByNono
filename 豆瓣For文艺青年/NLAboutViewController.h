@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NLAboutViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+#import "MBProgressHUD.h"
+@interface NLAboutViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,MBProgressHUDDelegate>
 {
     UITableView *_tabV;
 }

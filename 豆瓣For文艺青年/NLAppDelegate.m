@@ -15,22 +15,51 @@
 
 @synthesize window = _window;
 @synthesize nav;
-@synthesize isLogin,token;
+@synthesize isLogin,token,isAvailableNet;
 
 - (void)dealloc
 {
     [_window release];
     [token release];
     [nav release];
+    [hostReachability release];
+
     [super dealloc];
 }
++(NLAppDelegate*)shareAppDelegate
+{
+    return (NLAppDelegate*)[[UIApplication sharedApplication] delegate];
+}
+- (void)reachabilityChanged:(NSNotification *)note
+{
+    Reachability *curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
+    NetworkStatus status = [curReach currentReachabilityStatus];
+    if (status == NotReachable) {
+        self.isAvailableNet = NO;
+        
+    }else {
+        self.isAvailableNet = YES;
+    }
+}
 
++(NLAppDelegate*)shareAPPDelegate
+{
+    return (NLAppDelegate*)[[UIApplication sharedApplication] delegate];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
         
+    hostReachability = [[Reachability reachabilityWithHostName:@"www.baidu.com"] retain];
+    [hostReachability startNotifier];
+    
+    // 网路检测监控
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+
+    
     
    NSString *_appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
     
@@ -43,11 +72,13 @@
     [nav.navigationBar setBarStyle:UIBarStyleBlackOpaque];
    
     nav.title = _appName;
-    [self.window addSubview:nav.view];
+    self.window.rootViewController = navBar;
     [root release];
     [navBar release];
     [self.window makeKeyAndVisible];
     return YES;
+    
+    
     
     
     

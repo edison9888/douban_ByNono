@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Reachability.h"
 @interface NLAppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 {
+    BOOL isAvailableNet;
+    Reachability *hostReachability;
     BOOL isLogin;
     NSString *token;
 }
-@property(nonatomic)BOOL isLogin;
+
++(NLAppDelegate*)shareAppDelegate;
+@property(nonatomic,assign) BOOL isAvailableNet;
+@property(nonatomic,assign)BOOL isLogin;
 @property (retain,nonatomic)UINavigationController *nav;
 @property (strong, nonatomic) UIWindow *window;
 @property(retain,nonatomic)NSString *token;
 
++(NLAppDelegate*)shareAPPDelegate;
 @end

@@ -14,7 +14,6 @@
 #import "UIImageView+NLDispatchLoadImage.h"
 #import "NLReviewDetailViewController.h"
 @interface NLReviewViewController ()
-
 @end
 
 @implementation NLReviewViewController
@@ -27,9 +26,13 @@
 }
 -(void) fetchNet
 {
-    
+  
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.labelText = @"数据加载中...";
+	HUD.delegate = self;
+    [HUD show:YES];
     [douban RssReviewWithTag:currentTAG delegate:self];
-    
 }
 
 - (void)initData
@@ -51,12 +54,22 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (dataArr.count == 0) {
+        [self fetchNet];
+    }
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self initData];
     self.title = @"评论TOP20";
-    UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 43, 320, 1)];
+    UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 43, 320, 10)];
     [overlayView setBackgroundColor:[UIColor colorWithRed:108/255.0f green:108.0/255.0f blue:108.0/255.0f alpha:1.0]];
     [self.navigationController.navigationBar addSubview:overlayView]; // navBar is your UINavigationBar instance
     [overlayView release];
@@ -65,7 +78,7 @@
     [tabs selectedIndex:1];
     [self.view addSubview:tabs];
     
-    UITableView *tv = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, 320, 376)];
+    UITableView *tv = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, 320,iPhone5?(376+88):376)];
     tv.backgroundColor = [UIColor groupTableViewBackgroundColor];
     tv.tag = 100;
     tv.dataSource = self;
@@ -73,7 +86,6 @@
     tabV = tv;
     [self.view addSubview:tabV];
     
-    [self fetchNet];
     
 	// Do any additional setup after loading the view.
 }
@@ -90,18 +102,18 @@
     UILabel* label = [[[UILabel alloc] init] autorelease];
     switch (tabIndex) {
         case 0:
-            label.text = [NSString stringWithFormat:@"最新评论", tabIndex+1];
+            label.text = [NSString stringWithFormat:@"最新评论"];
             break;
             
         case 1:
-            label.text = [NSString stringWithFormat:@"最新书评", tabIndex+1];
+            label.text = [NSString stringWithFormat:@"最新书评"];
             break;
         case 2:
-            label.text = [NSString stringWithFormat:@"最新影评", tabIndex+1];
+            label.text = [NSString stringWithFormat:@"最新影评"];
             break;
             
         case 3:
-            label.text = [NSString stringWithFormat:@"最新乐评", tabIndex+1];
+            label.text = [NSString stringWithFormat:@"最新乐评"];
             break;
     }
     
@@ -134,7 +146,7 @@
             break;
     }
     
-[self fetchNet ];
+    [self fetchNet ];
 }
 - (void) touchDownAtTabIndex:(NSUInteger)tabIndex
 {
@@ -161,6 +173,8 @@
     }
     NLRssInfo *info = [self.dataArr objectAtIndex:indexPath.row];
     
+  
+    [cell restAllView];
     cell.title.text= info.title;
     cell.who.text = info.dc_creator;
     cell.content.text = info.description;
@@ -183,16 +197,26 @@
     NLReviewDetailViewController *vc = [[NLReviewDetailViewController alloc] init];
     vc.reviewId = info.link;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController pushViewController:vc animated:YES];
+        [self.navigationController pushViewController:vc animated:YES];
+    
     [vc release];
 }
 
+-(void)showToastWithMessage:(NSString*)mes
+{
+   HUD = [[MBProgressHUD alloc] initWithView:self.view.window];
+    [self.view.window addSubview:HUD];
+    HUD.labelText = mes;
+        
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:0.5];
+}
 
 #pragma mark delagate methods
 -(void)handleReponse:(NSString*)response ResponseStatusCode:(int)code
 {
+    [HUD hide:YES afterDelay:0.2];
     if (code == 200) {
-      //  NSLog(response);
         NLRSSData *data = [[NLRSSData alloc]init];
         BOOL b = [data parser:response];
         if (b) {
@@ -200,6 +224,8 @@
         }
         [data release];
         [tabV reloadData];
+    }else {
+        [self showToastWithMessage:@"请求失败"];
     }
 }
 
@@ -254,4 +280,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+	// Remove HUD from screen when the HUD was hidded
+	[HUD removeFromSuperview];
+	[HUD release];
+     HUD = nil;
+}
 @end

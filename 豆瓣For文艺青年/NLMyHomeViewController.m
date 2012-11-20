@@ -17,34 +17,56 @@
 #import "NLFriendsShuoInfo.h"
 #import "NLFriendsShuoShuoData.h"
 #import "UIImageView+NLDispatchLoadImage.h"
+#import "NLShuoshuoDetailViewController.h"
+#import "NLFriendsShareData.h"
+#import "NLFriendShareInfo.h"
+#import "NLSearchViewController.h"
+#import "MBProgressHUD.h"
+#import "NLAppDelegate.h"
+#define SIZE @"10"
+
 @interface NLMyHomeViewController ()
+{
+    int start;
+    MBProgressHUD *HUD;
+
+    
+}
+@property(retain,nonatomic)NLFriendsShareData *data;
 @property(retain,nonatomic)NLDouban *douban;
 @end
 
 @implementation NLMyHomeViewController
-@synthesize contentView,tabV,data,miniArr,douban,refresView;
+@synthesize contentView,tabV,data,miniArr,douban,refresView,Tabcell;
 
 - (void)dealloc
 {
     [contentView release];
+    [Tabcell release];
     [tabV release];
     [data release];
     [douban release];
     [refresView release];
+    [miniArr release];
     [super dealloc];
 }
 
 - (void)fetchFriendsMiniBlog
 {
-    if (!douban) {
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view.window];
+        [self.navigationController.view.window addSubview:HUD];
+        HUD.labelText = @"数据加载中...";
+        HUD.delegate = self;
+        [HUD show:YES];
+           
         self.douban = [[NLDouban alloc]init];
         [douban release];
-    }
-    self.data = [[NLFriendsShuoShuoData alloc] init];
-    [data release];
-    isLoading = YES;
-    [douban getAuthorizationmFriendsMiniBlogWithData:nil delegate:self];
-    
+        
+        self.data = [[NLFriendsShareData alloc] init];
+        [data release];
+        data.count = SIZE;
+        data.start = [NSString stringWithFormat:@"%d",start];
+        [douban getBookMovieMusicFromFriendsWithData:data delegate:self];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,20 +79,22 @@
 
 - (void)initdata
 {
-    NSMutableArray *a = [[NSMutableArray alloc]init];
-    self.miniArr = a;
-    [a release];
+    
+    self.miniArr = [[NSMutableArray alloc] initWithCapacity:0];
+    [miniArr release];
+    start = 0;
+  
 }
 
 - (void)initMyView
 {
    
-    UITableView *tv = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, 320, 376)];
+    UITableView *tv = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, iPhone5?416+88:416)];
     tv.tag = 100;
     tv.dataSource = self;
     tv.delegate = self;
      self.tabV = tv;
-    [tv setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    [tv setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
     [self.view addSubview:tabV];
     [tv release];
     
@@ -83,18 +107,8 @@
 }
 - (void)viewDidLoad
 {  [super viewDidLoad];
-    self.title = @"豆瓣广播";
+    self.title = @"友邻怎么说";
    
-    UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 43, 320, 1)];
-    [overlayView setBackgroundColor:[UIColor colorWithRed:108.0/255.0f green:108.0/255.0f blue:108.0/255.0f alpha:1.0]];
-    [self.navigationController.navigationBar addSubview:overlayView]; // navBar is your UINavigationBar instance
-    [overlayView release];
-    
-    SlidingTabsControl* tabs = [[SlidingTabsControl alloc] initWithTabCount:2 delegate:self];
-    [tabs selectedIndex:1];
-    [self.view addSubview:tabs];
-    
-    
     [self initdata];
     [self initMyView];
     
@@ -105,208 +119,184 @@
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.miniArr.count;
+    
+    NSInteger i = miniArr.count;
+    
+    return ((start <= 0) || (start>=i))? start:start+1;
 }
 
 
-- (void)cellReset:(NLMiniBlogCell*)cell
+-(void)showMore
 {
-   
-    cell.imageV.image = nil;
-    cell.imageV.backgroundColor = [UIColor blueColor];
     
-    cell.who.text = nil;
-    cell.short_title.text = nil;
-    cell.title.text = nil;
-    cell.content.text = nil;
-    cell.text.text = nil;
-}
--(void)computerCellFrame:(NLMiniBlogCell *)cell content:(NLFriendsShuoInfo*)info
-{
-    [self cellReset:cell];
-    CGFloat xPos = 45;
-    CGFloat yPos = 5;
-    CGFloat bgY = 5;
-    CGFloat enY = 5;
-    [cell.imageV setImageFromUrl:info.userImageLink];
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view.window];
+    [self.navigationController.view.window addSubview:HUD];
+    HUD.labelText = @"加载更多...";
+    HUD.delegate = self;
+    [HUD show:YES];
     
+    start = start+10>miniArr.count?miniArr.count:start+10;
+//    - (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
+    [tabV reloadData];
     
-    NSString *who = info.username;
-    CGSize size = CGSizeMake(320,2000);
-    CGSize Wholasize = [who sizeWithFont:cell.who.font constrainedToSize:size];
-    [cell.who setFrame:CGRectMake(xPos, 5, Wholasize.width, Wholasize.height)];
-    cell.who.text = who;
-    
-    
-      xPos += Wholasize.width;
-    xPos += 5;
-    
-    yPos += Wholasize.height;
-    yPos += 5;
-    bgY = yPos;
-    
-    NSString *short_title = info.short_title;
-    CGSize short_title_size = [short_title sizeWithFont:cell.short_title.font constrainedToSize:size];
-    [cell.short_title setFrame:CGRectMake(xPos, 5, short_title_size.width, short_title_size.height)];
-    cell.short_title.text = short_title;
-    
-    
-    NSString *title = info.title;
-    CGSize title_size = [title sizeWithFont:cell.title.font constrainedToSize:CGSizeMake(260, 2000)];
-    [cell.title setFrame:CGRectMake(50, yPos, title_size.width, title_size.height)];
-    cell.title.text = title;
-    
-      title_size.height > 0 ? yPos += title_size.height+5:yPos;
-    
-    NSString *content = info.content;
-    CGSize content_size = [content sizeWithFont:cell.content.font constrainedToSize:CGSizeMake(260, 2000)];
-    [cell.content setFrame:CGRectMake(50, yPos, content_size.width, content_size.height)];
-    cell.content.text = content;
-    
-    
-    content_size.height > 0 ? yPos += content_size.height+5:yPos;   
-    [cell.contentGg setFrame:CGRectMake(45, bgY, 270, yPos - bgY)];
-    
-
-    NSString *text = info.text;
-    CGSize text_size = [text sizeWithFont:cell.text.font constrainedToSize:CGSizeMake(260, 2000)];   
-    [cell.text setFrame:CGRectMake(50, yPos, text_size.width, text_size.height)];
-    cell.text.text = text;
-
-//     NSLog(@"布局后高度为：：%f",i);
+    [HUD hide:YES afterDelay:1.5];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {   
-    static NSString *identifier = @"cell";
-
-    NLMiniBlogCell *cell;
-    cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    static NSString *identifier = @"nono";
+    static NSString *identifier_more = @"more";
+    UITableViewCell *cell  ;
+    if (indexPath.row == start) {
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier_more];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier_more] autorelease];
+                   
+        }
+        cell.textLabel.textAlignment = UITextAlignmentCenter ;
+        cell.textLabel.text = @"更多";
+        return cell;
+    } 
     
-    if (!cell) {
-        cell = [[[NLMiniBlogCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
+   cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        //从nib文件中加载一个
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SearchObjectCell" owner:self options:nil];
+        if([nib count] > 0){
+            cell = self.Tabcell;
+        }else{
+            NSLog(@"加载 nib文件失败");
+        }
     }
     
+    NLFriendShareInfo *info = [self.miniArr objectAtIndex:indexPath.row];
+    NSUInteger i_image = 10;
+    NSUInteger i_name = 11;
+    NSUInteger i_whichdone = 12;
+    NSUInteger i_metatile = 13;
+    NSUInteger i_metades =14;
+    NSUInteger i_suosuo = 15;
     
-    NLFriendsShuoInfo *info = [self.miniArr objectAtIndex:indexPath.row];
-    [self computerCellFrame:cell content:info];
+    UIImageView *iv =  (UIImageView*)[cell viewWithTag:i_image];
+    UILabel *nl = (UILabel*)[cell viewWithTag:i_name];
+    UILabel *wl = (UILabel*)[cell viewWithTag:i_whichdone];
+    UILabel *ml = (UILabel*)[cell viewWithTag:i_metatile];
+    UILabel *dl = (UILabel*)[cell viewWithTag:i_metades];
+    
+    nl.text = nil;
+    iv.image = [UIImage imageNamed:@"loading80*120.png"];
+    wl.text = nil;
+    ml.text = nil;
+    dl.text = nil;
+    
+    nl.text = info.userName;
+    [iv setImageFromUrl:info.uerImage];
+    wl.text = info.title;
+    ml.text = info.metaTitle;
+    dl.text = info.metaDes;
+    
+    UILabel *suosuoBtn =  (UILabel*)[cell viewWithTag:i_suosuo];
+    if ([info.type isEqualToString:@""]) {
+        suosuoBtn.hidden = YES;
+    }else {
+        suosuoBtn.hidden = NO;
+      
+    }
     return cell;
-}
-
--(CGFloat)computerHeight:(NLFriendsShuoInfo*)info
-{
-    CGFloat h = 0;
-    CGSize size ;
-    size = CGSizeMake(320,2000);
-    UIFont *font;
-    
-    h+=5;
-    font =[UIFont systemFontOfSize:13];
-    NSString *who = info.username;
-    CGSize Wholasize = [who sizeWithFont:font constrainedToSize:size];
-    h+= Wholasize.height;
-    
-    h+=5;
-    size = CGSizeMake(260, 2000);
-    font =[UIFont systemFontOfSize:14];
-    NSString *title = info.title;
-    CGSize titlesize = [title sizeWithFont:font constrainedToSize:size];
-    h+= titlesize.height;
-    
-    h+= 5;
-    font =[UIFont systemFontOfSize:12];
-    NSString *content = info.content;
-    CGSize contentsize = [content sizeWithFont:font constrainedToSize:size];
-    h+= contentsize.height;
-    h+= 5;
-    
-    font =[UIFont systemFontOfSize:13];
-    NSString *text= info.text;
-    CGSize textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(260, 2000)];
-    h+= textSize.height;
-    h+= 5;
-    
-    NSLog(@"高度为：：%f",h);
-    return h;
 }
 
 #pragma mark - UITableViewDalegate methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat h = [self computerHeight:[self.miniArr objectAtIndex:indexPath.row]];
-    return h;
+    return indexPath.row == start?40:160;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-}
-
-#pragma mark -SlidingTabsControlDelegate methods
-- (UILabel*) labelFor:(SlidingTabsControl*)slidingTabsControl atIndex:(NSUInteger)tabIndex
-{
-    UILabel* label = [[[UILabel alloc] init] autorelease];
-    switch (tabIndex) {
-        case 0:
-            label.text = [NSString stringWithFormat:@"友邻广播", tabIndex+1];
-            break;
-            
-        case 1:
-            label.text = [NSString stringWithFormat:@"我的说说", tabIndex+1];
-            break;
+    if (indexPath.row == start) {
+        [self showMore];
+        return;
     }
     
-    return label;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NLFriendShareInfo *info = [self.miniArr objectAtIndex:indexPath.row];
+    
+    if ([info.type isEqualToString:@""])
+        return;
+    NLSearchViewController *vc = [[NLSearchViewController alloc]init ];
+    vc._info = info;
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc release];
 }
 
-
-- (void) touchUpInsideTabIndex:(NSUInteger)tabIndex
+-(void)showToastWithMessage:(NSString*)mes
 {
-    NSLog(@"tag is %d",tabIndex);
+    HUD = [[MBProgressHUD alloc] initWithView:self.view.window];
+    [self.view.window addSubview:HUD];
+    HUD.labelText = mes;
     
-    switch (tabIndex) {
-      
-            
-        case 1:{
-            self.douban = [[NLDouban alloc]init];
-            [douban getAuthorizationMiniBlogWithData:nil delegate:self];
-            [douban release];
-            break;
-        }
-        case 0:{
-            self.douban = [[NLDouban alloc]init];
-            [douban getAuthorizationmFriendsMiniBlogWithData:nil delegate:self];
-            [douban release];
-            break;
-        }
-    }
-    
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:0.5];
 }
-
-
-- (void) touchDownAtTabIndex:(NSUInteger)tabIndex
-{
-    
-}
-
 #pragma mark delagate methods
 -(void)handleReponse:(NSString*)response ResponseStatusCode:(int)code
 {
-    isLoading = NO;
-    if (code == 200) {
-        [self.data jsonString2Bean:response];
-        NSArray *arr = [self.data arrInfo];
-        [self.miniArr addObjectsFromArray:arr];
-        [tabV reloadData];
+   
+    if (![NLAppDelegate shareAPPDelegate].isAvailableNet) {
+        
+        UIAlertView * a = [[ UIAlertView alloc] initWithTitle:@"提示" message:@"网络错误，请检查您的网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [a show];
+        [a release];
     }
-    [refresView egoRefreshScrollViewDataSourceDidFinishedLoading:tabV];
+    
+    [HUD hide:YES afterDelay:0.1];
+    if (code == 200) {
+        [self.data jsonString2Bean:response];    
+       
+        if (data.arrInfo.count == 0) {
+            UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"提示" message:@"没有相关广播记录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [a show];
+            [a release];
+        }else{
+        if (isLoading == YES)
+              [miniArr removeAllObjects];
+        
+        [miniArr addObjectsFromArray:data.arrInfo];
+        start = 10;
+        [tabV reloadData];
+        }
+    }else{
+        if (isLoading) {
+            start = 10;
+        }
+        [self showToastWithMessage:@"请求失败"];
+    }
+    
+    if (isLoading == YES) {
+        isLoading = NO;
+        [refresView egoRefreshScrollViewDataSourceDidFinishedLoading:tabV];
+        
+    }
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)doneLoadingTableViewData
+{
+    isLoading=NO;
+    [refresView egoRefreshScrollViewDataSourceDidFinishedLoading:tabV];
+}
 
 #pragma mark - EGO deleagteMethods
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
 {//实现触发刷新操作
-   
-    [self fetchFriendsMiniBlog];
+
+        start = 0;
+        isLoading = YES;
+        [self fetchFriendsMiniBlog];
+  
     
 }
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
@@ -319,6 +309,8 @@
     return [NSDate date];
     
 }
+
+
 
 #pragma mark - scrollView delegate Methods
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView          //scrollview拖动时 调用ego。。。。view中的方法
@@ -336,9 +328,22 @@
     // Release any retained subviews of the main view.
 }
 
+- (void)hudWasHidden:(MBProgressHUD *)hud
+{
+    [HUD removeFromSuperview];
+	[HUD release];
+     HUD = nil;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+}
 @end
+

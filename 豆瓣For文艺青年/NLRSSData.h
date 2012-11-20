@@ -15,7 +15,6 @@
      NSMutableString *currentText;
     NSString *currentElementName;
     NSString *Cdata;
-    
     NSMutableArray *rssArr;
 }
 @property(retain,nonatomic)   NSMutableString *currentText;

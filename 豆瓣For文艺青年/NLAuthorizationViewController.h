@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NLAppDelegate.h"
-@interface NLAuthorizationViewController : UIViewController<UIWebViewDelegate>
+#import "MBProgressHUD.h"
+#import "NLDouban.h"
+@interface NLAuthorizationViewController : UIViewController<UIWebViewDelegate,MBProgressHUDDelegate,NLDoubanRequestDelegate,UIAlertViewDelegate>
 
 {
     NLAppDelegate *_delegate;

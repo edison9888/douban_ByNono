@@ -13,6 +13,9 @@
 #import "NLAuthorizationViewController.h"
 #import "NLAboutViewController.h"
 #import "NLDouUViewController.h"
+#import "NLSearchViewController.h"
+#import "NLAppDelegate.h"
+#import "MBProgressHUD.h"
 @interface NLRootViewController ()
 
 @end
@@ -48,8 +51,8 @@
     
     GradientButton *douU = [GradientButton buttonWithType:UIButtonTypeCustom];
     douU.frame = CGRectMake(220, 220, 40, 40);
-    [douU setTitle:@"豆油" forState:UIControlStateNormal];
-    douU.titleLabel.font = [UIFont systemFontOfSize:12];
+    [douU setTitle:@"广播" forState:UIControlStateNormal];
+    douU.titleLabel.font = [UIFont systemFontOfSize:14];
     [douU useSimpleOrangeStyle];
     douU.tag = 103;
     [douU addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
@@ -58,8 +61,8 @@
        
     GradientButton *myHome = [GradientButton buttonWithType:UIButtonTypeCustom];
     myHome.frame = CGRectMake(180, 140, 80, 80);
-    [myHome setTitle:@"广播" forState:UIControlStateNormal];
-    myHome.titleLabel.font = [UIFont systemFontOfSize:20];
+    [myHome setTitle:@"书影音搜索" forState:UIControlStateNormal];
+    myHome.titleLabel.font = [UIFont systemFontOfSize:16];
     [myHome useGreenConfirmStyle];
     myHome.tag = 100;
     [myHome addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,8 +77,37 @@
     [review addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:review];
+    
+    
+    UILabel *cpLa = [[UILabel alloc] init];
+    cpLa.backgroundColor = [UIColor clearColor];
+    cpLa.textAlignment = UITextAlignmentCenter;
+    cpLa.font = [UIFont systemFontOfSize:14];
+    CGFloat h = (iPhone5?360+88:360);
+    cpLa.frame = CGRectMake(20, h, 280, 40);
+    cpLa.lineBreakMode = UILineBreakModeWordWrap;
+    cpLa.numberOfLines = 0;
+    cpLa.text = [NSString stringWithFormat:@"%@",@"Copyright (c) 2012年 NonoWithLilith. All rights reserved."];
 
+    [self.view addSubview:cpLa];
+    [cpLa release];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+        _delegate = (NLAppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    UIBarButtonItem *barItem;
+    if (_delegate.isLogin) {
+        barItem = [[UIBarButtonItem alloc] initWithTitle:@"切换账户" style:UIBarButtonItemStyleBordered target:self action:@selector(login)]; 
+    }else {
+        barItem = [[UIBarButtonItem alloc] initWithTitle:@"登陆" style:UIBarButtonItemStyleBordered target:self action:@selector(login)]; 
+    }
+     
+    self.navigationItem.rightBarButtonItem = barItem;
+    [barItem release];
+    [self addButton];
 }
 
 - (void)viewDidLoad
@@ -83,16 +115,6 @@
     //获取应用名作为title
     NSString *_appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
     self.title = _appName;
-    
-    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithTitle:@"登陆" style:UIBarButtonItemStyleBordered target:self action:@selector(login)]; 
-
-    self.navigationItem.rightBarButtonItem = barItem;
-    [barItem release];
-    
-    _delegate = (NLAppDelegate*)[[UIApplication sharedApplication]delegate];
-    
-    [self addButton];
-       
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -100,9 +122,23 @@
 
 -(void)login
 {
+    if(_delegate.isLogin)
+    {
+        _delegate.isLogin = NO;
+        _delegate.token = @"";
+        
+
+//        
+//        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view.window];
+//        hud.labelText = @"正在注销当前用户";
+//        [self.view.window addSubview:hud];
+//        [hud show:YES];
+//        [hud hide:YES afterDelay:1.5];
+    }
     NLAuthorizationViewController  *targetVc=[[NLAuthorizationViewController alloc ]init];
     [self.navigationController pushViewController:targetVc animated:YES];
     [targetVc release];
+    
 }
 
 -(void)select:(id)sender
@@ -121,7 +157,7 @@
         case 100:{
             //首页
             
-           targetVc =[[NLMyHomeViewController alloc]init];
+           targetVc =[[NLSearchViewController alloc]init];
             
             break;
         }
@@ -136,8 +172,12 @@
             
             break;
         case 103:
-            //豆油
-            targetVc =[[NLDouUViewController alloc]init];
+            
+            if ([NLAppDelegate shareAPPDelegate].isLogin) {
+            targetVc =[[NLMyHomeViewController alloc]init];
+            }else {
+                targetVc = [[NLAuthorizationViewController alloc] init];
+            }
             break;
             
         case 104:

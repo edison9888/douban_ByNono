@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SlidingTabsControl.h"
 #import "NLDouban.h"
-
-@interface NLReviewViewController : UIViewController<SlidingTabsControlDelegate,UITableViewDelegate,UITableViewDataSource,NLDoubanRequestDelegate,NSXMLParserDelegate>
+#import "MBProgressHUD.h"
+@interface NLReviewViewController : UIViewController<SlidingTabsControlDelegate,UITableViewDelegate,UITableViewDataSource,NLDoubanRequestDelegate,NSXMLParserDelegate,MBProgressHUDDelegate>
 {
     NSString *currentTAG;
-    
+    MBProgressHUD *HUD;
+
     UITableView *tabV;
     
     NSMutableArray *dataArr;

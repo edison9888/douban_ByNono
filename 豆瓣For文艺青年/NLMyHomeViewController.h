@@ -7,26 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import  "SlidingTabsControl.h"
 #import "NLUserInfoView.h"
 #import "NLDouban.h"
-#import "NLMiniBlogData.h"
 #import "EGORefreshTableHeaderView.h"
+#import "MBProgressHUD.h"
 @class NLFriendsShuoShuoData;
-@interface NLMyHomeViewController : UIViewController<SlidingTabsControlDelegate,UITableViewDelegate,UITableViewDataSource,NLDoubanRequestDelegate,EGORefreshTableHeaderDelegate>
+@interface NLMyHomeViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,NLDoubanRequestDelegate,EGORefreshTableHeaderDelegate,MBProgressHUDDelegate,UIAlertViewDelegate>
 {
     UITableView *tabV;
     NLUserInfoView *contentView;
-    NLFriendsShuoShuoData *data;
     
     EGORefreshTableHeaderView *refresView;
     NSMutableArray *miniArr;
     BOOL isLoading;
     
 }
+@property (retain, nonatomic) IBOutlet UITableViewCell *Tabcell;
 @property(retain,nonatomic)UITableView *tabV;
 @property(retain,nonatomic)NLUserInfoView *contentView;
-@property(retain,nonatomic)NLFriendsShuoShuoData *data;
 @property(retain,nonatomic)NSMutableArray *miniArr;
 @property(retain,nonatomic) EGORefreshTableHeaderView *refresView;
 @end

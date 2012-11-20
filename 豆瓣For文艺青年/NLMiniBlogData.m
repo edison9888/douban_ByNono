@@ -14,6 +14,9 @@
 @synthesize userId,arrInfo;
 - (void)dealloc
 {
+    
+    [UIScreen instanceMethodForSelector:@selector(currentMode)] ;
+
     [userId release];
     [arrInfo release];
     [super dealloc];

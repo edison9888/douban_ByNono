@@ -28,12 +28,12 @@
     if (entryArr && ![entryArr isEqual:[NSNull null]]) {
         
         for (id o in entryArr) {
-            NSString *object_kind = [o objectForKey:@"object_kind"];
+//            NSString *object_kind = [o objectForKey:@"object_kind"];
 
             NSString *text = [o objectForKey:@"text"];
             NSString *screen_name = [[o objectForKey:@"user"] objectForKey:@"screen_name"];
             NSString *image = [[o objectForKey:@"user"] objectForKey:@"small_avatar"];
-            NSString *userid = [[o objectForKey:@"user"] objectForKey:@"userid"];
+//            NSString *userid = [[o objectForKey:@"user"] objectForKey:@"userid"];
             
             
             //关于内容

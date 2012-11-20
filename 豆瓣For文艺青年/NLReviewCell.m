@@ -20,7 +20,15 @@
     [who release];
     [super dealloc];
 }
-
+-(void)restAllView
+{
+    self.title.text = nil;
+    self.who.text = nil;
+    self.content.text = nil;
+    self.Time.text = nil;
+    UIImage *img = [UIImage imageNamed:@"loading80*120.png"];
+    [imageV setImage:img];
+}
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -28,7 +36,7 @@
 //        self.contentView.backgroundColor = [UIColor darkGrayColor];
         // Initialization code
         self.imageV=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 60, 80)];
-        UIImage *img = [UIImage imageNamed:@"mushroom.png"];
+        UIImage *img = [UIImage imageNamed:@"loading80*120.png"];
         [imageV setImage:img];
         [self.contentView addSubview:imageV];
         [imageV release];
@@ -56,7 +64,7 @@
         [who release];
         
         
-        self.content = [[UILabel alloc]initWithFrame:CGRectMake(20, 80, 280, 100)];
+        self.content = [[UILabel alloc]initWithFrame:CGRectMake(20, 95, 280, 85)];
         content.backgroundColor = [UIColor clearColor];
         content.font = [UIFont systemFontOfSize:12];
         content.numberOfLines =0; //this is used to determine how many lines this label will have.if =3,it means this  label's text will show 3 lines.if =0 ,it means that this label's text will show the line whate it needs.no limit.

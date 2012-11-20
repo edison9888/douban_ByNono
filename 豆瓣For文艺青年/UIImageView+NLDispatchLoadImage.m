@@ -19,23 +19,22 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-       // NSLog(@"Starting: %@", urlString);
         UIImage *avatarImage = nil; 
         NSURL *url = [NSURL URLWithString:urlString];
         NSData *responseData = [NSData dataWithContentsOfURL:url];
         avatarImage = [UIImage imageWithData:responseData];
-//        NSLog(@"Finishing: %@", urlString);
         
         if (avatarImage) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.image = avatarImage;
                
             });
-          //  dispatch_async(dispatch_get_main_queue(), completion);
         }
         else {
           //  NSLog(@"-- impossible download: %@", urlString);
         }
+//        dispatch_async(dispatch_get_main_queue(), completion);
+
     });   
 }
 @end

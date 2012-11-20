@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NLDouUViewController : UIViewController
+#import "NLDouban.h"
+@interface NLDouUViewController : UIViewController<NLDoubanRequestDelegate>
 
 @end

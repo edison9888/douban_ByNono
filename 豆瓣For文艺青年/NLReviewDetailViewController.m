@@ -7,7 +7,7 @@
 //
 
 #import "NLReviewDetailViewController.h"
-
+#import "NLAppDelegate.h"
 @interface NLReviewDetailViewController ()
 @property(retain,nonatomic)UIActivityIndicatorView *activityView;
 @property(retain,nonatomic)UIBarButtonItem *refreshBtn;
@@ -26,6 +26,15 @@
     [super dealloc];
 }
 
+
+-(void)isNet
+{
+    if (![NLAppDelegate shareAPPDelegate].isAvailableNet) {
+        UIAlertView * a = [[ UIAlertView alloc] initWithTitle:@"提示" message:@"网络错误，请检查您的网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [a show];
+        [a release];
+    }
+}
 
 -(void) fetchNet
 {
@@ -50,7 +59,14 @@
     return self;
 }
 
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    if (activityView.isAnimating) {
+        [activityView stopAnimating];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -58,8 +74,9 @@
     [self initData];
     self.title = @"评论详情";
    
-   
-   self.webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, 397-44)];
+ 
+    
+    self.webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, iPhone5?(416-44+88):(416-44))];
     [self.view addSubview:webView];
     webView.backgroundColor=[UIColor groupTableViewBackgroundColor];
     webView.scalesPageToFit=YES;
@@ -73,7 +90,7 @@
     
     
     //工具栏
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,416, 320, 44)];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,iPhone5?(416+88):416, 320, 44)];
     [toolbar setBarStyle:UIBarStyleBlackOpaque];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     [self.view addSubview:toolbar];
@@ -94,6 +111,7 @@
     [toolbar setItems:arr];
     
     [front release];
+    [space release];
     [next release];
     [refreshBtn release];
     [fixspace release];
@@ -105,10 +123,14 @@
     [activityView release];
     
     
+    
    // toolbar 
 	// Do any additional setup after loading the view.
 }
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)refresh
 {
     [webView reload];
@@ -134,6 +156,7 @@
 #pragma mark UIWebViewDelegate methods
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    [self isNet];
     return YES;
 
 }

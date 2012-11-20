@@ -16,6 +16,8 @@
     UILabel *title;//
     UILabel *content;
 }
+
+-(void)restAllView;
 @property(nonatomic,retain)UIImageView * imageV;
 @property(nonatomic,retain)UILabel * Time;
 @property(nonatomic,retain)UILabel * who;
