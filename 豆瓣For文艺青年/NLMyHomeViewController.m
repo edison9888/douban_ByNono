@@ -162,6 +162,7 @@
     if (cell == nil) {
         //从nib文件中加载一个
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SearchObjectCell" owner:self options:nil];
+        
         if([nib count] > 0){
             cell = self.Tabcell;
         }else{

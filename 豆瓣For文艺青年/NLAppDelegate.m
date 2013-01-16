@@ -78,40 +78,17 @@
     [self.window makeKeyAndVisible];
     return YES;
     
-    
-    
-    
-    
-//    UITabBarController *root = [[UITabBarController alloc]init];
-//    root.delegate =self;
-//    root.selectedIndex = 0;
-//    root.title = @"Home";
-//    //tabBar中5个选项卡视图
-//    NLHomeViewController *home = [[NLHomeViewController alloc]init];
-//    NLBookViewController *book = [[NLBookViewController alloc] init];
-//    NSArray *arr = [[NSArray alloc] initWithObjects:home,book ,nil];
-//    [home release];
-//    [book release];
-//    root.viewControllers = arr;
-//    [arr release];
 
 }
 
-//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-//{
-//    NSInteger index = tabBarController.selectedIndex;
-//    
-//    switch (index) {
-//        case 0:
-//             tabBarController.title = @"我的首页";
-//            break;
-//            
-//        case 1:
-//            tabBarController.title = @"豆瓣读书";
-//            break;
-//    }
-//}
-
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    BOOL bHandle = NO;
+    
+    NSLog(@"%@",[url host]);
+    
+    return bHandle;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

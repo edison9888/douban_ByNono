@@ -19,7 +19,8 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        UIImage *avatarImage = nil; 
+        UIImage *avatarImage = nil;
+    
         NSURL *url = [NSURL URLWithString:urlString];
         NSData *responseData = [NSData dataWithContentsOfURL:url];
         avatarImage = [UIImage imageWithData:responseData];
